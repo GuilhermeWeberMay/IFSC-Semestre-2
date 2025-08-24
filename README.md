@@ -11,15 +11,15 @@ Habilidades desenvolvidas no curso:
 
 O curso possui carga horária de aproximadamente 1.200 horas, distribuídas ao longo de cerca de 3 semestres.
 
-| Sigla   | Unidade Curricular                | Carga Horária |
-|---------|-----------------------------------|---------------|
-| BDA30102 | Banco de Dados II                 | 40h           |
-| IES30102 | Informática, Ética e Sociedade    | 20h           |
-| PIN30102 | Projeto Integrador I              | 60h           |
-| POO30102 | Programação Orientada a Objetos I | 80h           |
-| PRS30102 | Projeto de Sistemas               | 60h           |
-| PRW30102 | Programação Web I                 | 100h          |
-| SEG30102 | Segurança da Informação           | 40h           |
+| Sigla | Unidade Curricular                | Carga Horária |
+|-----|-----------------------------------|---------------|
+| BDA | Banco de Dados II                 | 40h           |
+| IES | Informática, Ética e Sociedade    | 20h           |
+| PIN | Projeto Integrador I              | 60h           |
+| POO | Programação Orientada a Objetos I | 80h           |
+| PRS | Projeto de Sistemas               | 60h           |
+| PRW | Programação Web I                 | 100h          |
+| SEG | Segurança da Informação           | 40h           |
 
 ## Sobre o repositório
 Este repositório reúne os projetos que desenvolvi ao longo do meu segundo semestre no curso Técnico em Desenvolvimento de Sistemas do IFSC – Florianópolis (Câmpus Centro).
