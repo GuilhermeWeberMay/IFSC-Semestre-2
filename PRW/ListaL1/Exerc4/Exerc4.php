@@ -12,8 +12,9 @@
  <?php 
  $fahrenheit = $_POST["fahrenheit"];
  $celsius = ($fahrenheit - 32) * 5 / 9;
+ $celsiusFormatado = number_format("$celsius", 1, ".");
  echo "<p> Resultado final: <br>
-       $celsius </p>";
+       $celsiusFormatado </p>";
  ?>
 </body>
 </html>
