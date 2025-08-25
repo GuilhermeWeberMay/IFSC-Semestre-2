@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title> Fundamentos do PHP </title>
+ <link rel="stylesheet" href="Exerc5.css">
+ <title> Fundamentos do PHP </title>
+</head>
+<body>
+ <h1> Fundamentos do PHP - Exerc2</h1>
+
+ <form action="Exerc5.php" method="post">
+  <fieldset>
+   <legend> Supermercado GWM - processamento de vendas </legend>
+   
+   <label for="Nome" class="alinha"> Forneça o valor da compra: </label>
+   <input type="number" name="valor-compra" placeholder="Valor da venda" min="0" step="0.01" autofocus required> <br>
+
+   <label> Pagamento em cartão? </label> <br>
+
+   <input type="radio" name="cartao" value="sim">
+   <label> SIM </label> <br>
+
+   <input type="radio" name="cartao" value="nao">
+   <label> NÃO </label> <br>
+
+   <label> Entrega domicilar? </label> <br>
+   <!-- Se os name's forem iguais só pode selecionar um -->
+   <input type="radio" name="entrega" value="sim">
+   <label> SIM </label> <br>
+
+   <input type="radio" name="entrega" value="nao">
+   <label> NÃO </label> <br>
+
+   <button> Processar venda </button>
+  </fieldset>
+ </form>
+</body>
+</html>
