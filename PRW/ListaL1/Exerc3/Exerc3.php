@@ -13,7 +13,7 @@
  <?php 
  // Criando constantes em PHP, na maioria das linguagens de programção é uma boa pratica escrever ela em caixa alta, uma constante so pode ser declarada uma vez e não pode ser alterada no meio do código
  define ("DESCONTO", 10/100); // O PHP tambem pode fazer operações dentro da constante 
- define ("ICMS", 12/100);
+ define ("ICMS", 0.12);
  define ("COMISSAO", 0.05);
  $valorVenda = $_GET["valorVenda"];
  $nome = $_GET["nome"];
