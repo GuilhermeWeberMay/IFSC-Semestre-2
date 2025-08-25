@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title> Fundamentos do PHP </title>
+ <link rel="stylesheet" href="Exerc6.css">
+ <title> Fundamentos do PHP </title>
+</head>
+<body>
+ <h1> Fundamentos do PHP - Exerc6</h1>
+
+ <form action="Exerc6.php" method="post">
+  <fieldset>
+   <legend> Supermercado GWM - processamento de vendas </legend>
+   
+   <label for="valor-compra" class="alinha"> Forneça o valor da compra: </label>
+   <input type="number" name="valor-compra" placeholder="Valor da venda" min="0" step="0.01" autofocus required> <br>
+
+   <input type="checkbox" name="cartao">
+   <label> Marque esta opção se o cliente pagou a compra com <span> cartão </span> </label> <br>
+
+   <input type="checkbox" name="entrega">
+   <label> Marque esta opção se o cliente pediu entrega a <span>domicilio </span> </label> <br>
+   <!-- Sempre que possivel troque os botões de radio por checkbox, mas checkbox só podem ser utilizadas quando somente DUAS opções -->
+   <button> Processar venda </button>
+  </fieldset>
+ </form>
+</body>
+</html>
