@@ -23,7 +23,10 @@
  <p> Abaixo, acrésimo da página web para exemplificar a transferência de dados ao servidor por meio de links </p>
  <!-- O link só consegue pelo metodo GET -->
  <p>
-  <a href="recebe-dados-de-links.php"> Clique aqui para converter 55°F para o equivalente em ºC</a>
+  <!-- Para enviar informações por meio de links é necessário mandar por QUERY STRING.
+  Exemplo: Simples - php?identificador=valor
+           Composto - php?identificador=valor&identificador=valor -->
+  <a href="recebe-dados-de-links.php?fahrenheit=55"> Clique aqui para converter 55°F para o equivalente em ºC</a>
  </p>
 </body>
 </html>

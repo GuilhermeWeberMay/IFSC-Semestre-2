@@ -8,10 +8,10 @@
  <title> Fundamentos do PHP </title>
 </head>
 <body>
- <h1> Fundamentos do PHP - Exerc4 - Respota servidor </h1>
+ <h1> Fundamentos do PHP - Exerc4 - Respota servidor, tratando dados de links </h1>
  <?php 
-
- $fahrenheit = $_POST["fahrenheit"];
+ // O recebimento de dados de um link sempre é feito por meio de $_GET
+ $fahrenheit = $_GET["fahrenheit"];
 
  $celsius = ($fahrenheit - 32) * 5 / 9;
 
