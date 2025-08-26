@@ -62,5 +62,13 @@ INSERT INTO alunos (nome, email, telefone) VALUES
 ('Maximilian Schmit', 'max.schmit@example.lu', '+352 621 789 012'),
 ('Emma Hoffmann', 'emma.hoffmann@example.lu', '+352 621 345 678'),
 ('Marie Dupont', 'marie.dupont@example.lu', '+352 621 901 234');
+  
+INSERT INTO matriculas (alunos_id, cursos_id, disciplinas_id) VALUES
+(1, 1, 1),  -- Lucas Müller: Curso de Finanças Luxemburguês -> Fundamentos de Economia
+(2, 2, 2),  -- Sophie Weber: Curso de Direito Internacional -> Legislação Europeia
+(3, 3, 3),  -- Maximilian Schmit: Curso de Tecnologia da Informação -> Programação em Python
+(4, 4, 4),  -- Emma Hoffmann: Curso de Gestão de Fundos -> Análise de Investimentos
+(5, 5, 5);  -- Marie Dupont: Curso de Desenvolvimento Sustentável -> Gestão de Recursos Naturais
 
-select * from matriculas
+-- Exercicios 
+-- Remova linhas da tabela Matriculas
