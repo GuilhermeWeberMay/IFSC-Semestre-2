@@ -61,31 +61,31 @@ COMMIT;
 
 -- Exercicios 
 -- 1) Listar todos os dados da tabela pessoa
--- select * from pessoas;
+-- select * from pessoas; Correto
 
 -- 2) Listar nome e e-mail em ordem descendente de e-mail
- -- select * from pessoas order by email desc; 
+ -- select nome, email from pessoas order by email desc; Correto
 
 -- 3) Listar dados e telefones das pessoas que tem telefone
--- select nome, email, idPessoa from pessoas, telefones where pessoas.id = telefones.idPessoa;
+-- select nome, email, idPessoa from pessoas, telefones where pessoas.id = telefones.idPessoa; Correto
 
 -- 4) Listar somente nome e telefone destas pessoas
--- select nome, telefone from pessoas, telefones where pessoas.id = telefones.idPessoa;
+-- select nome, telefone from pessoas, telefones where pessoas.id = telefones.idPessoa; Correto
 
 -- 5) Listar telefones de uma pessoas 
--- select telefone from telefones where telefones.idPessoa = 1;
+-- select telefone from telefones where telefones.idPessoa = 1; Correto
 
 -- 6) Alterar o nome das pessoas para os colegas de classe
--- update pessoas set nome='Zara' where nome = 'Ana';
--- update pessoas set nome='Onurb' where nome = 'Bruno';
--- update pessoas set nome='Solrac' where nome = 'Carlos';
--- update pessoas set nome='Htide' where nome = 'Edith';
+-- update pessoas set nome='Zara' where nome = 'Ana'; Correto
+-- update pessoas set nome='Onurb' where nome = 'Bruno'; Correto
+-- update pessoas set nome='Solrac' where nome = 'Carlos'; Correto
+-- update pessoas set nome='Htide' where nome = 'Edith'; Correto
 
 -- 7) Listar nome das pessoas que não tem telefone em ordem descendente (nome)
--- select nome from pessoas where id not in (select idPessoa from telefones) order by nome desc;
+-- select nome from pessoas where id not in (select idPessoa from telefones) order by nome desc; Correto
 
 -- 8) Listar nome e email das pessoas que não tem telefone
--- select nome, email from pessoas where id not in (select idPessoa from telefones) order by nome desc;
+-- select nome, email from pessoas where id not in (select idPessoa from telefones); Correto
 
 -- 9) Acrescentar o prefixo (48) e o algarismo 9 aos telefones
 -- UPDATE telefones SET telefone = CONCAT('(48)9', telefone) WHERE telefone IS NOT NULL;
