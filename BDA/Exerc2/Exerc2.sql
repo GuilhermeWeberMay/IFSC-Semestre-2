@@ -72,3 +72,26 @@ INSERT INTO matriculas (alunos_id, cursos_id, disciplinas_id) VALUES
 
 -- Exercicios 
 -- Remova linhas da tabela Matriculas
+delete from matriculas where id = 1;
+-- Não é necessário colocar * no delete por conta do delete apagar a linha inteira
+-- Primeiro delete nas chaves estrangeiras depois a primaria 
+
+-- Remova linhas da tabela Disciplinas que sejam referenciadas na tabela Matriculas
+delete from disciplinas where id = 1;
+
+-- Remova linhas da tabela Alunos que sejam referenciadas na tabela Matriculas
+delete from alunos where id = 1;
+
+-- Remova linhas da tabela Cursos que sejam referenciadas na tabela Disciplinas
+delete from cursos where id = 1;
+
+-- Alteração 
+ALTER TABLE disciplinas
+ADD FOREIGN KEY (cursos_id) REFERENCES cursos(id)
+ON DELETE CASCADE;
+
+alter table matriculas
+add foreign key (alunos_id) references alunos(id),
+add foreign key (cursos_id) references cursos(id),
+add foreign key (disciplinas_id) references disciplinas(id)
+on delete cascade;
