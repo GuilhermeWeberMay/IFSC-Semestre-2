@@ -85,14 +85,32 @@ delete from alunos where id = 1;
 -- Remova linhas da tabela Cursos que sejam referenciadas na tabela Disciplinas
 delete from cursos where id = 1;
 
+select * from matriculas;
+select * from alunos;
+select * from cursos;
+select * from disciplinas;
+
+ alter table matriculas drop foreign key matriculas_ibfk_1;
+ alter table matriculas drop foreign key matriculas_ibfk_2;
+ alter table matriculas drop foreign key matriculas_ibfk_3;
+
 -- Alteração 
 ALTER TABLE disciplinas
 ADD FOREIGN KEY (cursos_id) REFERENCES cursos(id)
 ON DELETE CASCADE;
 
 alter table matriculas
-add foreign key (alunos_id) references alunos(id),
-add foreign key (cursos_id) references cursos(id),
+add foreign key (alunos_id) references alunos(id)
+on delete cascade;
+
+alter table matriculas
+add foreign key (cursos_id) references cursos(id)
+on delete cascade;
+
+alter table matriculas
 add foreign key (disciplinas_id) references disciplinas(id)
 on delete cascade;
+
 -- ALter table so podem ser feitas com chaves estrangeiras!
+select * from matriculas;
+delete from alunos where id='2';
