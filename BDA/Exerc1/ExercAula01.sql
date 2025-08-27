@@ -88,7 +88,7 @@ COMMIT;
 -- select nome, email from pessoas where id not in (select idPessoa from telefones); Correto
 
 -- 9) Acrescentar o prefixo (48) e o algarismo 9 aos telefones
--- UPDATE telefones SET telefone = CONCAT('(48)9', telefone) WHERE telefone IS NOT NULL;
+-- UPDATE telefones SET telefone = CONCAT('(48)9', telefone) WHERE telefone IS NOT NULL; Correto
 
 -- 10) Deletar as pessoas que não tem telefone
--- delete pessoas from pessoas, telefones where telefone in (null);
+-- delete * from pessoas where id not in (select idPessoa from telefones); X
