@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Mozilla+Headline:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+ margin: 0;
+ font-family: "Mozilla Headline";
+}
+
+h1 {
+ text-align: center;
+ font-family: "Roboto Condensed";
+ background-color: rgb(29, 45, 80);
+ color: #fff;
+ margin: 0;
+ margin-bottom: 50px;
+ box-shadow: 0 0 5px 5px rgb(30, 95, 116);
+}
+
+fieldset {
+ border: 1px solid rgb(30, 95, 116);
+ width: 50%;
+ margin: auto;
+ border-radius: 10px;
+ box-shadow: 5px 5px 5px #133B5C;
+ background: rgba(252, 218, 183, 30%);
+}
+
+label.alinha {
+ display: inline-block;
+ width: 250px;
+ text-align: right;
+ margin-bottom: 10px;
+}
+
+input[type="number"] {
+ width: 50px;
+}
+
+input[name="aluno"] {
+ width: 250px;
+ }
+
+input, button {
+ font-family: "Mozilla Headline";
+}
+
+button {
+ height: 50px;
+ font-size: 17px;
+ font-weight: bold;
+ margin: auto;
+ display: block;
+ margin-top: 20px;
+}
+
+p {
+ border: 1px solid rgb(30, 95, 116);
+ background: rgba(252, 218, 183, 30%);
+ text-align: center;
+ width: 50%;
+ margin: 20px auto;
+}
+
+span {
+ font-weight: bold;
+ color: #1E5F74; 
+}
