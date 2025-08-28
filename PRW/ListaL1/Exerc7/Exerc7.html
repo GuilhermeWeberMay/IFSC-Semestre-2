@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title> Fundamentos do PHP </title>
+ <link rel="stylesheet" href="Exerc7.css">
+ <title> Fundamentos do PHP </title>
+</head>
+<body>
+ <h1> Fundamentos do PHP - Exerc7 </h1>
+
+ <form action="Exerc7.php" method="post">
+  <fieldset>
+   <legend> Loja GWM - processamento de vendas </legend>
+
+   <br><label for="valor-compra" class="alinha"> Forneça o valor da compra: </label>
+   <input type="number" name="valor-compra" placeholder="Valor da venda" min="0" step="0.01" autofocus required> <br> <br>
+
+   <label> Forma de pagamento:</label> <br>
+   <input type="radio" name="forma-pagamento" value="avista">
+   <label> À vista </label> <br>
+
+   <input type="radio" name="forma-pagamento" value="aprazo">
+   <label> À prazo </label> <br>
+
+   <br><input type="checkbox" name="cartaovisa">
+   <label> Marque esta opção se o cliente pagou a compra com cartão da bandeira GWM </label><br>
+
+   <button> Calcular </button>
+  </fieldset>
+ </form>
+</body>
+</html>
