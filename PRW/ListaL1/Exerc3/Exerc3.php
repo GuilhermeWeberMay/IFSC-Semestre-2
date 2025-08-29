@@ -36,7 +36,7 @@
        Taxa do ICMS cobrado = <span>" . ICMS , "</span> <br>
        </p>
  ";
- // "+ICMS+" - é como mostrar uma constante em PHP, pode ser usado tanto . quanto ,
+ // ",ICMS," - é como mostrar uma constante em PHP, pode ser usado tanto . quanto ,
  ?>
 </body>
 </html>
