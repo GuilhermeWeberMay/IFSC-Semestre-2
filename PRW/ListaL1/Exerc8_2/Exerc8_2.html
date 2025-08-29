@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title> Fundamentos PHP </title>
+ <link rel="stylesheet" href="Exerc8_2.css">
+</head>
+<body>
+ <h1> Fundamentos do PHP - Exerc8 </h1>
+ <form action="Exerc8_2.php" method="post">
+  <fieldset>
+   <legend> Sistema de farmácias </legend>
+
+   <label for="valorCompra"> Valor:</label>
+   <input type="number" name="valorCompra" min="0" step="0.01" autofocus required placeholder="Valor da compra"><br>
+
+   <label> Selecione a idade do cliente </label><br>
+   <!-- Botões para o atendente selecionar a idade-->
+   <input type="radio" name="idade" value="55"><label> Cliente com MENOS de 55 anos </label><br>
+   <input type="radio" name="idade" value="55-70"><label> Cliente entre 55 e 70 anos </label><br>
+   <input type="radio" name="idade" value="70"><label> Cliente com MAIS de 70 anos </label><br>
+   
+   <label> Cartão fidelidade: </label><br>
+   <!-- Checkbox para a atendente informa se a um desconto pelo cartão fidelidade -->
+   <input type="checkbox" name="cartao"> <label> Marque esta opção se o cliente pagou com cartão fidelidade</label><br>
+
+   <button> Resultado </button>
+
+  </fieldset>
+ </form>
+</body>
+</html>

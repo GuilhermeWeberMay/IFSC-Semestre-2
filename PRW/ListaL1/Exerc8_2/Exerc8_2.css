@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Knewave&display=swap');
+body{
+ font-family: "Knewave";
+}
+input{
+ /* Coloca a fonte dentro do INPUT */
+ font-family: "Knewave";
+}
+h1{
+ width: 75%;
+ text-align: center;
+ text-shadow: 2px 2px 8px #6897bb;
+ color: #486982;
+ background-color: #808080;
+ margin: auto;
+ border-radius: 25px;
+}
+fieldset{
+ width: 50%;
+ margin: auto;
+ border-radius: 20px;
+ background-color: 	#ededed;
+}
+button{
+ width: 50%;
+ display: block;
+ margin: auto;
+ text-align: center;
+ text-shadow: 2px 2px 8px #6897bb;
+ color: #486982;
+ background-color: #808080;
+ margin: auto;
+ border-radius: 25px;
+ font-weight: bold;
+}
+p{
+ width: 75%;
+ text-align: center;
+ margin: auto;
+ border-radius: 25px;
+ margin-top: 20px;
+ border: 1px solid black;
+}
+span{
+ color: red;
+}
