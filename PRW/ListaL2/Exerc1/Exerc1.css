@@ -1,6 +1,7 @@
 fieldset{
  margin-top: 3%;
 }
+
 table{
  width: 60%;
  border: 1px solid red;
@@ -8,15 +9,18 @@ table{
  /* O primeiro valor são as distâncias de cima e baixo (top e botton) e o segundo valor são as distâncias da esquerda e direita (left e right)*/
  background-color: darkred;
 }
+
 caption{ /* Legenda da tabela */
  color: orange;
  font-weight: bold;
  margin-bottom: 3%;
 }
+
 th{/* Cabeçalho da tabela - TABLE HEADER */
  background-color: darkblue;
  color: #ffff;
 }
+
 td{/* Linhas da tabela - TABLE DATA */
  text-align: center;
  background-color: lightblue;
