@@ -34,7 +34,7 @@
  */
 
  // Percorrendo o vetor com o laço especial FOREACH e mostrar os dados no formato tabulado
-
+ // Criação do cabeçalho - antes do laço para não repetir durante o laço 
  echo"<table>
        <caption> Rendimento semestral do aluno de PRW-I</caption>
        <tr>
@@ -51,7 +51,9 @@
          <td>$aluno</td>
          <td>$nota</td>
         </tr>";
+        // Dentro do laço somente colocar as linhas da tabela 
  }
+ // Finalizado a tag table depois do laço
  echo "</table>";
  ?>
 </body>
