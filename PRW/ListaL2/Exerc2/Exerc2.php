@@ -3,7 +3,7 @@
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <link rel="stylesheet" href="Exerc1.css">
+ <link rel="stylesheet" href="Exerc2.css">
  <title> Vetores em PHP </title>
 </head>
 <body>
@@ -23,8 +23,36 @@
                 $aluno3 => $nota3];
  // Indice associativo => Conteudo dentro da célula
 
- // Exibindo o conteúdo do vetor na página web - mas somente para desenvolvedores não para usuários
+ /* 
+ - Exibindo o conteúdo do vetor na página web - mas somente para desenvolvedores não para usuários
+
+ echo "<pre>";
  print_r($vetorNotas);
+ echo "</pre>";
+
+ - Esta tag faz como se fosse o PRINTLN do java, ele quebra uma linha depois de expor o vetor, um <br> do HTML 
+ */
+
+ // Percorrendo o vetor com o laço especial FOREACH e mostrar os dados no formato tabulado
+
+ echo"<table>
+       <caption> Rendimento semestral do aluno de PRW-I</caption>
+       <tr>
+        <th> Nome do aluno </th>
+        <th> Nota do aluno </th>
+       </tr>
+      ";
+
+ foreach ($vetorNotas as $aluno => $nota){
+ // Não é necessário informar um valor limite para o PHP ele calcula isso sozinho e para sozinho
+ // O primeiro valor guarda o indice do vetor
+ // O segundo valor guarda o conteudo do vetor
+  echo "<tr>
+         <td>$aluno</td>
+         <td>$nota</td>
+        </tr>";
+ }
+ echo "</table>";
  ?>
 </body>
 </html>
