@@ -24,3 +24,9 @@ O curso possui carga horária de aproximadamente 1.200 horas, distribuídas ao l
 ## Sobre o repositório
 Este repositório reúne os projetos que desenvolvi ao longo do meu segundo semestre no curso Técnico em Desenvolvimento de Sistemas do IFSC – Florianópolis (Câmpus Centro).
 Aqui compartilho exercícios, trabalhos e aplicações que refletem os conhecimentos adquiridos nas disciplinas do meio do curso, servindo tanto como registro da minha evolução na área quanto como portfólio para futuras oportunidades.
+
+## Referências
+
+- DAMINELLI, Herval. [Lista de exercícios]. Material didático da disciplina Programação Web I. Instituto Federal de Santa Catarina (IFSC), 2025.
+- PISCHING, Marcos Andre. [Lista de exercícios]. Material didático da disciplina Programação Orientada a Objetos I. Instituto Federal de Santa Catarina (IFSC), 2025.
+- MELLO, Emerson Ribeiro de. [Lista de exercícios]. Material didático da disciplina Banco de Dados II. Instituto Federal de Santa Catarina (IFSC), 2025.
