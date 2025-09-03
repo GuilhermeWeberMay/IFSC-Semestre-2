@@ -1,6 +1,6 @@
-drop database if exists Exerc3;
-create database Exerc3;
-use Exerc3;
+drop database if exists Exerc4;
+create database Exerc4;
+use Exerc4;
 DROP TABLE IF EXISTS `Departamento`;
 CREATE TABLE `Departamento` (
   `idDepartamento` int(11) NOT NULL,
