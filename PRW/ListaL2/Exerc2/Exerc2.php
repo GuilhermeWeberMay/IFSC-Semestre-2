@@ -55,6 +55,24 @@
  }
  // Finalizado a tag table depois do laço
  echo "</table>";
+
+ /* 
+ Vamos utilizar a função pronta do PHP para encontrar a maior nota dentro do vetor
+
+ $maiorNota = max($vetorNotas);
+ 
+ Nós já temos a maior nota dos alunos cadastrados. Queremos que o PHP descubra o nome deste aluno. Para isso, usamos a função abaixo
+
+ $alunoCaxias = array_search($maiorNota, $vetorNotas)
+ */
+
+ // Forma resumida misturando os dois comandos 
+ $nomeMaiorNota = array_search($maiorNota = max($vetorNotas), $vetorNotas);
+
+ echo "<p>Resultado da busca no vetor: <br>
+          Aluno com maior nota cadastrada = <span> $nomeMaiorNota </span><br> 
+          Nota: <span> $maiorNota </span> </p>"
+ 
  ?>
 </body>
 </html>
