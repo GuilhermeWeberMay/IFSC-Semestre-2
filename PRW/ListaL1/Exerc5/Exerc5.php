@@ -11,7 +11,7 @@
  <h1> Fundamentos do PHP - Exerc5 - resposta servidor </h1>
  <?php
  $valorCompra = $_POST["valor-compra"];
- // Teste se os botões de rádio doram marcados
+ // Teste se os botões de rádio foram marcados
  if (!isset($_POST["cartao"])){// PHP aceita um metodo dentro de if se retornar um valor booleano
  // Se o PHP entrar dentro deste IF, significa que o usuário não selecionou nenhum dos dois botões relacionados ao pagamento com cartão. Erro fatal: encerramos a aplicação com uma mensagem adequada.
  exit("<p><span> Erro fatal </span>: A forma de pagamento deve ser fornecida. Aplicação encerrada! </p>");
