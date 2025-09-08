@@ -42,6 +42,14 @@ button{
  font-size: 18px;
 }
 
+p{
+ margin: auto;
+ color: yellow;
+ text-align: center;
+ border: 10px solid yellow;
+
+}
+
 table{
  width: 60%;
  border: 1px solid red;
