@@ -7,7 +7,8 @@
  <title> Vetores em PHP </title>
 </head>
 <body>
- <h1> Vetores em PHP - ListaL2 - Exerc1 - Respota Servidor </h1>
+ <h1> Vetores em PHP - ListaL2 - Exerc1 </h1>
+ <h1> Respota Servidor </h1>
  <?php
 
  $nota1 = $_POST['nota1'];
