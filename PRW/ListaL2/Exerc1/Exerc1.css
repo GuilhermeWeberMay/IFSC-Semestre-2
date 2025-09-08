@@ -1,11 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+h1{
+ text-align: center;
+}
+
 body{
  font-family:"Press Start 2P";
+ background-color: black;
+ color: yellow;
 }
 fieldset{
  margin-top: 3%;
  border-radius: 15px;
+ width: 40%;
+ padding: 2%;
+ text-align: center;
+ margin: auto;
+ margin-bottom: 2%;
+}
+input{
+ display: block;
+ margin: auto;
+ margin-top: 2%;
+ border-radius: 20px;
+ width: 35%;
+ border-color: white;
+ background-color: black;
+ color: white;
+ text-align: center;
+ font-size: 16px;
+}
+
+button{
+ display: block;
+ margin: auto;
+ border-radius: 20px;
+ width: 20%;
+ border-color: white;
+ background-color: black;
+ color: yellow;
+ font-size: 18px;
 }
 
 table{
