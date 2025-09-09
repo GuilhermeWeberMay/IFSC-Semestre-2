@@ -107,9 +107,15 @@ INSERT INTO pedidos (idFornecedores, idProdutos, quantidade, valor) VALUES
 -- 1.1)Mostrar a lista de fornecedores em ordem alfabética e sem repetições
 -- select distinct fornecedores.nome from fornecedores natural join pedidos order by fornecedores.nome;
 -- 1.2)Mostrar a lista de fornecedores com o nome dos produtos fornecidos
-select fornecedores.nome, produto.nome from produto natural join estoque join fornecedor on estoque.idForncedor = fornecedor.id;
+-- select distinct fornecedores.nome, produtos.nome from produtos natural join estoque join fornecedores on estoque.idFornecedores = fornecedores.idFornecedor;
 -- 1.3)Mostrar a lista de fornecedores com o valor total de vendas
+-- select fornecedores.nome, SUM(pedidos.valor) as valorTotal from fornecedores natural join pedidos group by fornecedores.nome;
 
+-- 2) Mostrar a lista completa de pedidos com as dados de cada produto;
+ select distinct * from pedidos natural join produtos;
+-- 2.1) Mostre uma tabela com Quantidade, Nome do Produto, Peso do produto e Peso Total do pedido(quantidade * peso)
+ select produtos.quantidade, produtos.nome, produto.peso (select quantidade, peso from produtos as pesoTotal)
+-- 2.2) Inclua na tabela anterior o nome e email do fornecedor.
 
 
 
