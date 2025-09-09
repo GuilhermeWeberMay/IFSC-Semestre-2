@@ -86,7 +86,7 @@ INSERT INTO estoque (idFornecedores, idProdutos, disponiveis, custo) VALUES
 (1, 7, 120, 150.00),    -- Fone de Ouvido Bluetooth da Tech Solutions Ltda
 (4, 8, 180, 30.00),     -- Caneca Personalizada da Papelaria & Cia
 (7, 9, 75, 300.00),     -- Relógio de Pulso da Moda & Estilo
-(6, 10, 15, 850.00);    -- Mesa de Centro da ConstruFácil
+(6, 10, 0, 850.00);    -- Mesa de Centro da ConstruFácil
 
 -- Tabela de pedidos
 INSERT INTO pedidos (idFornecedores, idProdutos, quantidade, valor) VALUES
@@ -112,12 +112,17 @@ INSERT INTO pedidos (idFornecedores, idProdutos, quantidade, valor) VALUES
 -- select fornecedores.nome, SUM(pedidos.valor) as valorTotal from fornecedores natural join pedidos group by fornecedores.nome;
 
 -- 2) Mostrar a lista completa de pedidos com as dados de cada produto;
- select distinct * from pedidos natural join produtos;
+-- select distinct * from pedidos natural join produtos;
 -- 2.1) Mostre uma tabela com Quantidade, Nome do Produto, Peso do produto e Peso Total do pedido(quantidade * peso)
- select produtos.quantidade, produtos.nome, produto.peso (select quantidade, peso from produtos as pesoTotal)
+-- SELECT pedidos.quantidade, produtos.nome AS nome_produto, produtos.peso, pedidos.quantidade * produtos.peso AS pesoPedido FROM pedidos JOIN produtos ON pedidos.idProdutos = produtos.idProduto ORDER BY nome_produto;
 -- 2.2) Inclua na tabela anterior o nome e email do fornecedor.
+-- SELECT fornecedores.nome, fornecedores.email, pedidos.quantidade, produtos.nome AS nome_produto, produtos.peso, pedidos.quantidade * produtos.peso AS pesoPedido FROM pedidos JOIN produtos ON pedidos.idProdutos = produtos.idProduto join fornecedores ORDER BY nome_produto;
 
+-- 3) Mostrar a lista de produtos e seus fornecedores para os produtos que não estejam disponíveis;
 
+-- 3.1)Inclua os dados dos produtos na pesquisa anterior
+-- 3.2)Ajuste a tabela anterior para apresentar somente dados amigáveis para humanos
+-- 3.3)Mostre uma tabela com o total disponível de cada produto em estoque por fornecedor
 
 /*
 select * from produtos;
