@@ -119,10 +119,74 @@ INSERT INTO pedidos (idFornecedores, idProdutos, quantidade, valor) VALUES
 -- SELECT fornecedores.nome, fornecedores.email, pedidos.quantidade, produtos.nome AS nome_produto, produtos.peso, pedidos.quantidade * produtos.peso AS pesoPedido FROM pedidos JOIN produtos ON pedidos.idProdutos = produtos.idProduto join fornecedores ORDER BY nome_produto;
 
 -- 3) Mostrar a lista de produtos e seus fornecedores para os produtos que não estejam disponíveis;
+SELECT 
+    p.nome AS produto,
+    p.descricao,
+    p.peso,
+    f.nome AS fornecedor,
+    f.email,
+    f.telefone,
+    e.disponiveis
+FROM 
+    estoque e
+JOIN produtos p ON e.idProdutos = p.idProduto
+JOIN fornecedores f ON e.idFornecedores = f.idFornecedor
+WHERE 
+    e.disponiveis = 0;
 
 -- 3.1)Inclua os dados dos produtos na pesquisa anterior
+select distinct produtos.idProduto from fornecedores natural join estoque join produtos where estoque.disponiveis = 0;
+SELECT 
+    p.nome AS produto,
+    f.nome AS fornecedor
+FROM 
+    estoque e
+JOIN produtos p ON e.idProdutos = p.idProduto
+JOIN fornecedores f ON e.idFornecedores = f.idFornecedor
+WHERE 
+    e.disponiveis = 0;
+
 -- 3.2)Ajuste a tabela anterior para apresentar somente dados amigáveis para humanos
+SELECT 
+    p.nome AS produto,
+    p.descricao,
+    p.peso,
+    f.nome AS fornecedor,
+    f.email,
+    f.telefone,
+    e.disponiveis
+FROM 
+    estoque e
+JOIN produtos p ON e.idProdutos = p.idProduto
+JOIN fornecedores f ON e.idFornecedores = f.idFornecedor
+WHERE 
+    e.disponiveis = 0;
 -- 3.3)Mostre uma tabela com o total disponível de cada produto em estoque por fornecedor
+SELECT 
+    f.nome AS fornecedor,
+    p.nome AS produto,
+    SUM(e.disponiveis) AS total_disponivel,
+    p.peso,
+    SUM(e.disponiveis * p.peso) AS peso_total
+FROM 
+    estoque e
+JOIN produtos p ON e.idProdutos = p.idProduto
+JOIN fornecedores f ON e.idFornecedores = f.idFornecedor
+GROUP BY 
+    f.nome, p.nome, p.peso
+ORDER BY 
+    fornecedor, produto;
+-- Desafio
+insert into estoque(idFornecedores, idProdutos, disponiveis, custo)
+select forncedores.id, produtos.id, pedidos.quantidade (pedidos.valor/pedidos.quantidade) from fornecedores
+	join
+		pedidos
+        on
+        fornecedores.id = pedidos.idFornecedor
+        join
+			produtos
+            on
+            pedidos.idProduto = produtos.id;
 
 /*
 select * from produtos;
