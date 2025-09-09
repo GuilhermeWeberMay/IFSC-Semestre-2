@@ -178,15 +178,15 @@ ORDER BY
     fornecedor, produto;
 -- Desafio
 insert into estoque(idFornecedores, idProdutos, disponiveis, custo)
-select forncedores.id, produtos.id, pedidos.quantidade (pedidos.valor/pedidos.quantidade) from fornecedores
+select fornecedores.idFornecedor, produtos.idProduto from fornecedores
 	join
 		pedidos
         on
-        fornecedores.id = pedidos.idFornecedor
+        fornecedores.idFornecedor = pedidos.idFornecedores
         join
 			produtos
             on
-            pedidos.idProduto = produtos.id;
+            pedidos.idProdutos = produtos.idProduto;
 
 /*
 select * from produtos;
