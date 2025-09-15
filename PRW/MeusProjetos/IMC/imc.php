@@ -45,6 +45,9 @@
    $vetorAuxPeso[$matrizNome] = $vetorInterno[0];
    $vetorAuxAltura[$matrizNome] = $vetorInterno[1];
  }
+ // Usar os dois vetores auxiliares para calcular 
+ // foreach para qualquer um dos dois com terceiro vetor
+ // Pode calcular tudo dentro de um foreach somente 
  echo"<pre>";
  print_r($vetorAuxAltura);
  echo"</pre>";
