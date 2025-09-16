@@ -114,7 +114,7 @@ INSERT INTO Participa (idDisciplina,idAluno,nota,frequencia) VALUES
 -- 15. Selecionar alunos com nome de exatamente 5 letras.
 	#SELECT * FROM Aluno WHERE nome LIKE '_____'
  )
- -- FLITRAGEM COM IN
+ -- FILTRAGEM COM IN
  (
  -- 16. Selecionar alunos com idAluno 2, 4 ou 5.
 	#SELECT * FROM Aluno WHERE idAluno IN (2,4,5);
@@ -127,3 +127,40 @@ INSERT INTO Participa (idDisciplina,idAluno,nota,frequencia) VALUES
  -- 20. Selecionar alunos cujo idAluno esteja na lista de alunos com frequência > 90 (subconsulta)
 	#SELECT * FROM Aluno WHERE idAluno IN (SELECT idAluno FROM Participa WHERE frequencia > 90);
  )
+ -- FILTRAGEM COM GROUP BY e HAVING
+(
+ -- 21. Calcular a média de nota de cada disciplina.
+ /*
+	SELECT idDisciplina, AVG(nota) AS médiaDisciplina
+    FROM Participa GROUP BY idDisciplina;
+ */
+ -- 22. Contar alunos por disciplina.
+  /*
+	SELECT idDisciplina, COUNT(idDisciplina) AS contagem
+    FROM Participa GROUP BY idDisciplina;
+ */
+ -- 23. Mostrar disciplinas com média de frequência > 85.
+ /*
+	SELECT frequencia, AVG(frequencia) AS mediaFrequencia
+    FROM Participa GROUP BY idDisciplina;
+ */
+ -- 24. Exibir cursos com mais de 2 disciplinas.
+ /*
+	SELECT idCurso, COUNT(idCurso) AS qtdCurso
+    FROM Disciplina GROUP BY idCurso 
+    HAVING COUNT(idCurso) > 1;
+ */
+ -- 25. Mostrar alunos com média de nota > 80.
+	SELECT nota, AVG(nota)
+)
+
+
+
+
+
+
+
+
+
+
+
