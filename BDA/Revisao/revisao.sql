@@ -74,6 +74,32 @@ INSERT INTO Participa (idDisciplina,idAluno,nota,frequencia) VALUES
     ('4','4','75','85'), -- Mariana - Direito Constitucional 
     ('5','5','90','98'); -- João - Anatomia 
 
-
+-- ===== ATIVIDADES =====
+-- SELEÇÃO SIMPLES 
+(
+-- 1. Listar todos os dados da tabela Cursos.
+	#SELECT * FROM Curso;
+-- 2. Listar todas as disciplinas.
+	#SELECT * FROM Disciplina;
+-- 3. Selecionar nomes e emails dos alunos.
+	#SELECT nome, email FROM Aluno;
+-- 4. Listar todos os registros da tabela Participa.
+	#SELECT * FROM Participa;
+)
+ -- FILTRAGEM COM WHERE
+(
+-- 5. Selecionar alunos com idAluno menor que 5.
+	#SELECT nome FROM Aluno WHERE idAluno < 5;
+-- 6. Selecionar alunos com nota maior que 80.
+	#SELECT * FROM Participa WHERE nota > 80;
+-- 7. Selecionar disciplinas com carga horária menor que 60.
+	#SELECT * FROM Disciplina WHERE cargaHoraria < 60;
+-- 8. Selecionar cursos da área 'Negócios'.
+	#SELECT * FROM Curso WHERE area = 'Negócios';
+-- 9. Selecionar participações com frequência menor que 90.
+	#SELECT * FROM Participa WHERE frequencia < 90;
+-- 10. Selecionar alunos com idAluno 3 ou 4.
+	#SELECT * FROM Aluno WHERE idAluno IN (3,4);
+)
 
 
