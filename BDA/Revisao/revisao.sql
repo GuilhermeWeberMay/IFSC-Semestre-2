@@ -74,8 +74,8 @@ INSERT INTO Participa (idDisciplina,idAluno,nota,frequencia) VALUES
     ('4','4','75','85'), -- Mariana - Direito Constitucional 
     ('5','5','90','98'); -- João - Anatomia 
 
--- ===== ATIVIDADES =====
--- SELEÇÃO SIMPLES 
+ -- ===== ATIVIDADES =====
+ -- SELEÇÃO SIMPLES 
 (
 -- 1. Listar todos os dados da tabela Cursos.
 	#SELECT * FROM Curso;
@@ -212,6 +212,8 @@ INSERT INTO Participa (idDisciplina,idAluno,nota,frequencia) VALUES
  */
  -- 40. Listar alunos e professores (assumindo tabela Professor).
  )
+
+ -- SELECT A PARTIR DE OUTRO SELECT
 
 
 
