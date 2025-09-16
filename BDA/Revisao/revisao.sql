@@ -68,7 +68,7 @@ INSERT INTO Aluno (nome, email) VALUES
     ('4','100','Anatomia');
 
 INSERT INTO Participa (idDisciplina,idAluno,nota,frequencia) VALUES
-	('1','1','85','90'), -- Ana - Programação I
+	('1','1','95','90'), -- Ana - Programação I
     ('2','2','78','95'), -- Bruno - Banco de Dados
     ('3','3','88','92'), -- Carlos - Gestão Financeira
     ('4','4','75','85'), -- Mariana - Direito Constitucional 
@@ -141,8 +141,9 @@ INSERT INTO Participa (idDisciplina,idAluno,nota,frequencia) VALUES
  */
  -- 23. Mostrar disciplinas com média de frequência > 85.
  /*
-	SELECT frequencia, AVG(frequencia) AS mediaFrequencia
-    FROM Participa GROUP BY idDisciplina;
+	SELECT idDisciplina, AVG(frequencia) AS mediaFrequencia
+    FROM Participa GROUP BY idDisciplina
+    HAVING AVG(frequencia) > 85;
  */
  -- 24. Exibir cursos com mais de 2 disciplinas.
  /*
@@ -151,9 +152,25 @@ INSERT INTO Participa (idDisciplina,idAluno,nota,frequencia) VALUES
     HAVING COUNT(idCurso) > 1;
  */
  -- 25. Mostrar alunos com média de nota > 80.
-	SELECT nota, AVG(nota)
+ /*
+	SELECT idAluno, AVG(nota) as mediaAluno
+    FROM Participa GROUP BY idAluno
+    HAVING AVG(nota) > 80;
+ */
 )
-
+ -- FILTRAGEM COM ORDER BY
+ (
+ -- 26. Listar alunos ordenados por nome crescente.
+	#SELECT * FROM Aluno ORDER BY nome ASC;
+ -- 27. Listar disciplinas por carga horária decrescente.
+	#SELECT * FROM Disciplina ORDER BY cargaHoraria DESC;
+ -- 28. Listar participações por frequência crescente.
+	#SELECT * FROM Participa ORDER BY frequencia ASC;
+ -- 29. Listar alunos por nota decrescente.
+	#SELECT * FROM Participa ORDER BY nota DESC;
+ -- 30. Listar cursos ordenados por área alfabeticamente.
+	#SELECT * FROM Curso ORDER BY area ASC;
+ )
 
 
 
