@@ -171,8 +171,47 @@ INSERT INTO Participa (idDisciplina,idAluno,nota,frequencia) VALUES
  -- 30. Listar cursos ordenados por área alfabeticamente.
 	#SELECT * FROM Curso ORDER BY area ASC;
  )
-
-
+ -- FILTRAGEM COM DISTINCT
+ (
+ -- 31. Listar todas as áreas de cursos sem repetição.
+	#SELECT DISTINCT area FROM Curso;
+ -- 32. Listar todos os nomes de alunos distintos.
+	#SELECT DISTINCT nome FROM Aluno;
+ -- 33. Listar todas as disciplinas distintas.
+	#SELECT DISTINCT nome FROM Disciplina;
+ -- 34. Listar todas as notas distintas na tabela Participa.
+	#SELECT DISTINCT nota FROM Participa;
+ -- 35. Listar todos os códigos de curso distintos que possuem disciplinas.
+	#SELECT DISTINCT idCurso FROM Disciplina;
+ )
+ -- FILTRAGEM COM UNION / UNION ALL
+ (
+ -- 36. Listar nomes de alunos e disciplinas sem repetição.
+ /*
+	SELECT nome FROM Aluno 
+    UNION 
+    SELECT nome FROM Disciplina;
+ */
+ -- 37. Listar emails de alunos e cursos (todos inclusivos).
+ /*
+	SELECT email FROM Aluno
+    UNION ALL
+    SELECT area FROM Curso;
+ */
+ -- 38. Combinar alunos com nota > 80 ou frequência > 90.
+ /*
+	SELECT idAluno FROM participa WHERE nota > 80
+    UNION
+    SELECT idAluno FROM participa WHERE frequencia > 90;
+ */
+ -- 39. Listar disciplinas e cursos da área 'Engenharia'.
+ /*
+	SELECT nome FROM Disciplina WHERE nome LIKE '%Engenharia%'
+    UNION 
+    SELECT nome FROM Curso WHERE area LIKE '%Engenharia%';
+ */
+ -- 40. Listar alunos e professores (assumindo tabela Professor).
+ )
 
 
 
