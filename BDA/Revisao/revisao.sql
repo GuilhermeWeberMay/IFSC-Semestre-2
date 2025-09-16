@@ -101,5 +101,29 @@ INSERT INTO Participa (idDisciplina,idAluno,nota,frequencia) VALUES
 -- 10. Selecionar alunos com idAluno 3 ou 4.
 	#SELECT * FROM Aluno WHERE idAluno IN (3,4);
 )
-
-
+ -- FILTRAGEM COM LIKE 
+ (
+-- 11. Selecionar alunos cujo nome começa com 'M'.
+	#SELECT * FROM Aluno WHERE nome LIKE 'M%';
+-- 12. Selecionar alunos cujo nome termina com 'a'.
+	#SELECT * FROM Aluno WHERE nome LIKE '%a';
+-- 13. Selecionar disciplinas cujo nome contenha 'Banco'.
+	#SELECT * FROM Disciplina WHERE nome LIKE '%Banco%';
+-- 14. Selecionar cursos cuja área contenha 'Engenharia'.
+	#SELECT * FROM Curso WHERE area LIKE '%Engenharia%';
+-- 15. Selecionar alunos com nome de exatamente 5 letras.
+	#SELECT * FROM Aluno WHERE nome LIKE '_____'
+ )
+ -- FLITRAGEM COM IN
+ (
+ -- 16. Selecionar alunos com idAluno 2, 4 ou 5.
+	#SELECT * FROM Aluno WHERE idAluno IN (2,4,5);
+ -- 17. Selecionar disciplinas cujo codCurso seja 1 ou 3.
+	#SELECT * FROM Disciplina WHERE idCurso IN (1,3);
+ -- 18. Selecionar participações com nota 75, 80 ou 85.
+	#SELECT * FROM Participa WHERE nota IN (75,80,85);
+ -- 19. Selecionar cursos com codCurso 2, 4 ou 5.
+	#SELECT * FROM Curso WHERE idCurso IN (2,4,5);
+ -- 20. Selecionar alunos cujo idAluno esteja na lista de alunos com frequência > 90 (subconsulta)
+	#SELECT * FROM Aluno WHERE idAluno IN (SELECT idAluno FROM Participa WHERE frequencia > 90);
+ )
