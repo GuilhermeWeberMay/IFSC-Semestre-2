@@ -24,11 +24,11 @@ CREATE TABLE Curso(
 CREATE TABLE Disciplina(
  idDisciplina INT PRIMARY KEY AUTO_INCREMENT NOT NULL UNIQUE,
  idCurso INT NOT NULL,
- cargaHoraria INT NOT NULL,
- nome VARCHAR(45),
- FOREIGN KEY (idCurso) REFERENCES Curso(idCurso)
+  FOREIGN KEY (idCurso) REFERENCES Curso(idCurso)
 	ON DELETE RESTRICT
-	ON UPDATE RESTRICT
+	ON UPDATE RESTRICT,
+ cargaHoraria INT NOT NULL,
+ nome VARCHAR(45)
 )ENGINE InnoDb;
 
 CREATE TABLE Participa (
@@ -51,11 +51,28 @@ INSERT INTO Aluno (nome, email) VALUES
     ('Bruno Silva','bruno@email.com'),
     ('Carlos Pereira','carlos@email.com'),
     ('Mariana Souza','mariana@email.com'),
-    ('João Santos','joao@email.com')
+    ('João Santos','joao@email.com');
 
--- INSERT INTO Curso (nome
+ INSERT INTO Curso (nome, area) VALUES
+	('Administração','Negócios'),
+    ('Direito','Jurídico'),
+    ('Medicina','Saúde'),
+    ('Arquitetura','Engenharia'),
+    ('Engenharia de Software','Computação');
 
+ INSERT INTO Disciplina (idCurso, cargaHoraria, nome) VALUES
+	('1','60','Programação I'),
+    ('1','60','Banco de Dados'),
+    ('2','40','Gestão Financeira'),
+    ('3','80','Direito Constitucional'),
+    ('4','100','Anatomia');
 
+INSERT INTO Participa (idDisciplina,idAluno,nota,frequencia) VALUES
+	('1','1','85','90'), -- Ana - Programação I
+    ('2','2','78','95'), -- Bruno - Banco de Dados
+    ('3','3','88','92'), -- Carlos - Gestão Financeira
+    ('4','4','75','85'), -- Mariana - Direito Constitucional 
+    ('5','5','90','98'); -- João - Anatomia 
 
 
 
