@@ -243,9 +243,38 @@ INSERT INTO Participa (idDisciplina,idAluno,nota,frequencia) VALUES
 	SELECT nome, nota FROM Aluno NATURAL JOIN Participa WHERE nota > 80;
 */
  -- SELECT A PARTIR DE INNER JOIN
+/*
  -- 1. Listar nome do aluno e nota usando INNER JOIN.
+	SELECT Aluno.nome, Participa.nota FROM Aluno INNER JOIN Participa
+		ON Aluno.idAluno = Participa.idAluno;
+	#Depois do ON é necessário colocar a chave primaira e estrangeira para as tabelas se conectarem
  -- 2. Listar nome do aluno e frequência usando INNER JOIN.
+	SELECT Aluno.nome, Participa.frequencia FROM Aluno INNER JOIN Participa
+		ON Aluno.idAluno = Participa.idAluno;
  -- 3. Selecionar nome do aluno, nome da disciplina e nota usando INNER JOIN com Disciplina.
+	SELECT Aluno.nome, Disciplina.nome, Participa.nota FROM Aluno INNER JOIN Participa
+		ON Aluno.idAluno = Participa.idAluno INNER JOIN Disciplina ON Disciplina.idDisciplina = Participa.idDisciplina;
  -- 4. Listar todos os alunos e notas onde a nota seja maior que 75 usando INNER JOIN.
+	SELECT Aluno.nome, Participa.nota FROM Aluno INNER JOIN Participa
+		ON Aluno.idAluno = Participa.idAluno WHERE Participa.nota > 75;
  -- 5. Selecionar idAluno, nome e frequência usando INNER JOIN, ordenando por frequência decrescente.
+	SELECT Aluno.idAluno, Aluno.nome, Participa.frequencia FROM Aluno INNER JOIN Participa
+		ON Aluno.idAluno = Participa.idAluno ORDER BY Participa.frequencia DESC;
+*/
+ -- SELECT A PARTIR DE INNER JOIN COM CLÁUSULAS
+ 
+ -- 1. Listar nome do aluno e nota apenas dos alunos com nota maior que 80.
+ 	SELECT Aluno.nome, Participa.nota FROM Aluno INNER JOIN Participa
+		ON Aluno.idAluno = Participa.idAluno WHERE Participa.nota > 80;
+ -- 2. Listar nome do aluno e disciplina apenas dos alunos que participam de disciplinas do curso 1.
+ -- 3. Selecionar nome e frequência dos alunos cuja frequência esteja em (85, 90, 95).
+ -- 4. Listar nome do aluno e nota, ordenados pela nota decrescente.
+ -- 5. Selecionar nome do curso e quantidade de disciplinas, apenas dos cursos que têmmais de 2 disciplinas.
 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
