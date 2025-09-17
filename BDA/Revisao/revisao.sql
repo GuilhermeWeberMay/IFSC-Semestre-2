@@ -76,7 +76,7 @@ INSERT INTO Participa (idDisciplina,idAluno,nota,frequencia) VALUES
 
  -- ===== ATIVIDADES =====
  -- SELEÇÃO SIMPLES 
-/*
+
 -- 1. Listar todos os dados da tabela Cursos.
 	SELECT * FROM Curso;
 -- 2. Listar todas as disciplinas.
@@ -85,9 +85,9 @@ INSERT INTO Participa (idDisciplina,idAluno,nota,frequencia) VALUES
 	SELECT nome, email FROM Aluno;
 -- 4. Listar todos os registros da tabela Participa.
 	SELECT * FROM Participa;
-*/
+
  -- FILTRAGEM COM WHERE
-/*
+
 -- 5. Selecionar alunos com idAluno menor que 5.
 	SELECT nome FROM Aluno WHERE idAluno < 5;
 -- 6. Selecionar alunos com nota maior que 80.
@@ -100,9 +100,9 @@ INSERT INTO Participa (idDisciplina,idAluno,nota,frequencia) VALUES
 	SELECT * FROM Participa WHERE frequencia < 90;
 -- 10. Selecionar alunos com idAluno 3 ou 4.
 	SELECT * FROM Aluno WHERE idAluno IN (3,4);
-*/
+
  -- FILTRAGEM COM LIKE 
-/*
+
 -- 11. Selecionar alunos cujo nome começa com 'M'.
 	SELECT * FROM Aluno WHERE nome LIKE 'M%';
 -- 12. Selecionar alunos cujo nome termina com 'a'.
@@ -113,9 +113,9 @@ INSERT INTO Participa (idDisciplina,idAluno,nota,frequencia) VALUES
 	SELECT * FROM Curso WHERE area LIKE '%Engenharia%';
 -- 15. Selecionar alunos com nome de exatamente 5 letras.
 	SELECT * FROM Aluno WHERE nome LIKE '_____'
-*/
+
  -- FILTRAGEM COM IN
-/*
+
  -- 16. Selecionar alunos com idAluno 2, 4 ou 5.
 	SELECT * FROM Aluno WHERE idAluno IN (2,4,5);
  -- 17. Selecionar disciplinas cujo codCurso seja 1 ou 3.
@@ -126,40 +126,40 @@ INSERT INTO Participa (idDisciplina,idAluno,nota,frequencia) VALUES
 	SELECT * FROM Curso WHERE idCurso IN (2,4,5);
  -- 20. Selecionar alunos cujo idAluno esteja na lista de alunos com frequência > 90 (subconsulta)
 	SELECT * FROM Aluno WHERE idAluno IN (SELECT idAluno FROM Participa WHERE frequencia > 90);
-*/
+
  -- FILTRAGEM COM GROUP BY e HAVING
-(
+
  -- 21. Calcular a média de nota de cada disciplina.
- /*
+ 
 	SELECT idDisciplina, AVG(nota) AS médiaDisciplina
     FROM Participa GROUP BY idDisciplina;
- */
+ 
  -- 22. Contar alunos por disciplina.
-  /*
+  
 	SELECT idDisciplina, COUNT(idDisciplina) AS contagem
     FROM Participa GROUP BY idDisciplina;
- */
+ 
  -- 23. Mostrar disciplinas com média de frequência > 85.
- /*
+ 
 	SELECT idDisciplina, AVG(frequencia) AS mediaFrequencia
     FROM Participa GROUP BY idDisciplina
     HAVING AVG(frequencia) > 85;
- */
+ 
  -- 24. Exibir cursos com mais de 2 disciplinas.
- /*
+ 
 	SELECT idCurso, COUNT(idCurso) AS qtdCurso
     FROM Disciplina GROUP BY idCurso 
     HAVING COUNT(idCurso) > 1;
- */
+ 
  -- 25. Mostrar alunos com média de nota > 80.
- /*
+ 
 	SELECT idAluno, AVG(nota) as mediaAluno
     FROM Participa GROUP BY idAluno
     HAVING AVG(nota) > 80;
- */
- )
+ 
+
  -- FILTRAGEM COM ORDER BY
-/*
+
  -- 26. Listar alunos ordenados por nome crescente.
 	SELECT * FROM Aluno ORDER BY nome ASC;
  -- 27. Listar disciplinas por carga horária decrescente.
@@ -170,9 +170,9 @@ INSERT INTO Participa (idDisciplina,idAluno,nota,frequencia) VALUES
 	SELECT * FROM Participa ORDER BY nota DESC;
  -- 30. Listar cursos ordenados por área alfabeticamente.
 	SELECT * FROM Curso ORDER BY area ASC;
-*/
+
  -- FILTRAGEM COM DISTINCT
-/*
+
  -- 31. Listar todas as áreas de cursos sem repetição.
 	SELECT DISTINCT area FROM Curso;
  -- 32. Listar todos os nomes de alunos distintos.
@@ -183,38 +183,38 @@ INSERT INTO Participa (idDisciplina,idAluno,nota,frequencia) VALUES
 	SELECT DISTINCT nota FROM Participa;
  -- 35. Listar todos os códigos de curso distintos que possuem disciplinas.
 	SELECT DISTINCT idCurso FROM Disciplina;
-*/
+
  -- FILTRAGEM COM UNION / UNION ALL
- (
+ 
  -- 36. Listar nomes de alunos e disciplinas sem repetição.
- /*
+ 
 	SELECT nome FROM Aluno 
     UNION 
     SELECT nome FROM Disciplina;
- */
+ 
  -- 37. Listar emails de alunos e cursos (todos inclusivos).
- /*
+ 
 	SELECT email FROM Aluno
     UNION ALL
     SELECT area FROM Curso;
- */
+ 
  -- 38. Combinar alunos com nota > 80 ou frequência > 90.
- /*
+ 
 	SELECT idAluno FROM participa WHERE nota > 80
     UNION
     SELECT idAluno FROM participa WHERE frequencia > 90;
- */
+ 
  -- 39. Listar disciplinas e cursos da área 'Engenharia'.
- /*
+ 
 	SELECT nome FROM Disciplina WHERE nome LIKE '%Engenharia%'
     UNION 
     SELECT nome FROM Curso WHERE area LIKE '%Engenharia%';
- */
+ 
  -- 40. Listar alunos e professores (assumindo tabela Professor).
- )
+ 
  -- ===== ATIVIDADES =====
  -- SELECT A PARTIR DE OUTRO SELECT
-/*
+
  -- 1. Selecionar nomes de alunos que possuem nota maior que 75.
 	SELECT nome FROM Aluno WHERE idAluno IN (SELECT idAluno FROM Participa WHERE nota > 75);
  -- 2. Selecionar nomes de disciplinas que têm carga horária menor que a média das disciplinas.
@@ -228,9 +228,9 @@ INSERT INTO Participa (idDisciplina,idAluno,nota,frequencia) VALUES
 			(SELECT AVG(qtd) FROM (	SELECT COUNT(idCurso) AS qtd FROM Disciplina GROUP BY idCurso) AS t));
  -- 5. Selecionar idAluno dos alunos que obtiveram a maior nota em alguma disciplina.
 	SELECT nome FROM Aluno WHERE idAluno IN (SELECT idAluno FROM Participa WHERE nota = (SELECT MAX(nota) FROM Participa));
-*/
+
  -- SELECT A PARTIR DE NATURAL JOIN
-/*
+
  -- 1. Listar nome do aluno e nota usando NATURAL JOIN.
 	SELECT Aluno.nome, Participa.nota FROM Aluno NATURAL JOIN Participa;
  -- 2. Listar nome do aluno e frequência usando NATURAL JOIN.
@@ -241,9 +241,9 @@ INSERT INTO Participa (idDisciplina,idAluno,nota,frequencia) VALUES
 	SELECT * FROM Aluno NATURAL JOIN Participa;
  -- 5. Selecionar nomes dos alunos com nota maior que 80 usando NATURAL JOIN.
 	SELECT nome, nota FROM Aluno NATURAL JOIN Participa WHERE nota > 80;
-*/
+
  -- SELECT A PARTIR DE INNER JOIN
-/*
+
  -- 1. Listar nome do aluno e nota usando INNER JOIN.
 	SELECT Aluno.nome, Participa.nota FROM Aluno INNER JOIN Participa
 		ON Aluno.idAluno = Participa.idAluno;
@@ -260,9 +260,9 @@ INSERT INTO Participa (idDisciplina,idAluno,nota,frequencia) VALUES
  -- 5. Selecionar idAluno, nome e frequência usando INNER JOIN, ordenando por frequência decrescente.
 	SELECT Aluno.idAluno, Aluno.nome, Participa.frequencia FROM Aluno INNER JOIN Participa
 		ON Aluno.idAluno = Participa.idAluno ORDER BY Participa.frequencia DESC;
-*/
+
  -- SELECT A PARTIR DE INNER JOIN COM CLÁUSULAS
-/* 
+
  -- 1. Listar nome do aluno e nota apenas dos alunos com nota maior que 80.
  	SELECT Aluno.nome, Participa.nota FROM Aluno INNER JOIN Participa
 		ON Aluno.idAluno = Participa.idAluno WHERE Participa.nota > 80;
@@ -279,4 +279,4 @@ INSERT INTO Participa (idDisciplina,idAluno,nota,frequencia) VALUES
  -- 5. Selecionar nome do curso e quantidade de disciplinas, apenas dos cursos que têm mais de 2 disciplinas.
 	SELECT Curso.nome, COUNT(Disciplina.idDisciplina) FROM Curso INNER JOIN Disciplina
 		ON Curso.idCurso = Disciplina.idCurso GROUP BY Curso.nome HAVING count(Disciplina.idCurso) > 1;
-*/
+
