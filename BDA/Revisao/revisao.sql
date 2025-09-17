@@ -112,7 +112,7 @@ INSERT INTO Participa (idDisciplina,idAluno,nota,frequencia) VALUES
 -- 14. Selecionar cursos cuja área contenha 'Engenharia'.
 	SELECT * FROM Curso WHERE area LIKE '%Engenharia%';
 -- 15. Selecionar alunos com nome de exatamente 5 letras.
-	SELECT * FROM Aluno WHERE nome LIKE '_____'
+	SELECT * FROM Aluno WHERE nome LIKE '_____';
 
  -- FILTRAGEM COM IN
 
