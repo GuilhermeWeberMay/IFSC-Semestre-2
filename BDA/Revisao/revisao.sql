@@ -262,7 +262,7 @@ INSERT INTO Participa (idDisciplina,idAluno,nota,frequencia) VALUES
 		ON Aluno.idAluno = Participa.idAluno ORDER BY Participa.frequencia DESC;
 */
  -- SELECT A PARTIR DE INNER JOIN COM CLÁUSULAS
- 
+/* 
  -- 1. Listar nome do aluno e nota apenas dos alunos com nota maior que 80.
  	SELECT Aluno.nome, Participa.nota FROM Aluno INNER JOIN Participa
 		ON Aluno.idAluno = Participa.idAluno WHERE Participa.nota > 80;
@@ -277,11 +277,6 @@ INSERT INTO Participa (idDisciplina,idAluno,nota,frequencia) VALUES
 	SELECT Aluno.nome, Participa.nota FROM Aluno INNER JOIN Participa
 		ON Aluno.idAluno = Participa.idAluno ORDER BY Participa.nota DESC;
  -- 5. Selecionar nome do curso e quantidade de disciplinas, apenas dos cursos que têm mais de 2 disciplinas.
-	SELECT Curso.nome
- 
- 
- 
- 
- 
- 
- 
+	SELECT Curso.nome, COUNT(Disciplina.idDisciplina) FROM Curso INNER JOIN Disciplina
+		ON Curso.idCurso = Disciplina.idCurso GROUP BY Curso.nome HAVING count(Disciplina.idCurso) > 1;
+*/
