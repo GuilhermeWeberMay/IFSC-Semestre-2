@@ -76,57 +76,57 @@ INSERT INTO Participa (idDisciplina,idAluno,nota,frequencia) VALUES
 
  -- ===== ATIVIDADES =====
  -- SELEÇÃO SIMPLES 
-(
+/*
 -- 1. Listar todos os dados da tabela Cursos.
-	#SELECT * FROM Curso;
+	SELECT * FROM Curso;
 -- 2. Listar todas as disciplinas.
-	#SELECT * FROM Disciplina;
+	SELECT * FROM Disciplina;
 -- 3. Selecionar nomes e emails dos alunos.
-	#SELECT nome, email FROM Aluno;
+	SELECT nome, email FROM Aluno;
 -- 4. Listar todos os registros da tabela Participa.
-	#SELECT * FROM Participa;
-)
+	SELECT * FROM Participa;
+*/
  -- FILTRAGEM COM WHERE
-(
+/*
 -- 5. Selecionar alunos com idAluno menor que 5.
-	#SELECT nome FROM Aluno WHERE idAluno < 5;
+	SELECT nome FROM Aluno WHERE idAluno < 5;
 -- 6. Selecionar alunos com nota maior que 80.
-	#SELECT * FROM Participa WHERE nota > 80;
+	SELECT * FROM Participa WHERE nota > 80;
 -- 7. Selecionar disciplinas com carga horária menor que 60.
-	#SELECT * FROM Disciplina WHERE cargaHoraria < 60;
+	SELECT * FROM Disciplina WHERE cargaHoraria < 60;
 -- 8. Selecionar cursos da área 'Negócios'.
-	#SELECT * FROM Curso WHERE area = 'Negócios';
+	SELECT * FROM Curso WHERE area = 'Negócios';
 -- 9. Selecionar participações com frequência menor que 90.
-	#SELECT * FROM Participa WHERE frequencia < 90;
+	SELECT * FROM Participa WHERE frequencia < 90;
 -- 10. Selecionar alunos com idAluno 3 ou 4.
-	#SELECT * FROM Aluno WHERE idAluno IN (3,4);
-)
+	SELECT * FROM Aluno WHERE idAluno IN (3,4);
+*/
  -- FILTRAGEM COM LIKE 
- (
+/*
 -- 11. Selecionar alunos cujo nome começa com 'M'.
-	#SELECT * FROM Aluno WHERE nome LIKE 'M%';
+	SELECT * FROM Aluno WHERE nome LIKE 'M%';
 -- 12. Selecionar alunos cujo nome termina com 'a'.
-	#SELECT * FROM Aluno WHERE nome LIKE '%a';
+	SELECT * FROM Aluno WHERE nome LIKE '%a';
 -- 13. Selecionar disciplinas cujo nome contenha 'Banco'.
-	#SELECT * FROM Disciplina WHERE nome LIKE '%Banco%';
+	SELECT * FROM Disciplina WHERE nome LIKE '%Banco%';
 -- 14. Selecionar cursos cuja área contenha 'Engenharia'.
-	#SELECT * FROM Curso WHERE area LIKE '%Engenharia%';
+	SELECT * FROM Curso WHERE area LIKE '%Engenharia%';
 -- 15. Selecionar alunos com nome de exatamente 5 letras.
-	#SELECT * FROM Aluno WHERE nome LIKE '_____'
- )
+	SELECT * FROM Aluno WHERE nome LIKE '_____'
+*/
  -- FILTRAGEM COM IN
- (
+/*
  -- 16. Selecionar alunos com idAluno 2, 4 ou 5.
-	#SELECT * FROM Aluno WHERE idAluno IN (2,4,5);
+	SELECT * FROM Aluno WHERE idAluno IN (2,4,5);
  -- 17. Selecionar disciplinas cujo codCurso seja 1 ou 3.
-	#SELECT * FROM Disciplina WHERE idCurso IN (1,3);
+	SELECT * FROM Disciplina WHERE idCurso IN (1,3);
  -- 18. Selecionar participações com nota 75, 80 ou 85.
-	#SELECT * FROM Participa WHERE nota IN (75,80,85);
+	SELECT * FROM Participa WHERE nota IN (75,80,85);
  -- 19. Selecionar cursos com codCurso 2, 4 ou 5.
-	#SELECT * FROM Curso WHERE idCurso IN (2,4,5);
+	SELECT * FROM Curso WHERE idCurso IN (2,4,5);
  -- 20. Selecionar alunos cujo idAluno esteja na lista de alunos com frequência > 90 (subconsulta)
-	#SELECT * FROM Aluno WHERE idAluno IN (SELECT idAluno FROM Participa WHERE frequencia > 90);
- )
+	SELECT * FROM Aluno WHERE idAluno IN (SELECT idAluno FROM Participa WHERE frequencia > 90);
+*/
  -- FILTRAGEM COM GROUP BY e HAVING
 (
  -- 21. Calcular a média de nota de cada disciplina.
@@ -157,33 +157,33 @@ INSERT INTO Participa (idDisciplina,idAluno,nota,frequencia) VALUES
     FROM Participa GROUP BY idAluno
     HAVING AVG(nota) > 80;
  */
-)
+ )
  -- FILTRAGEM COM ORDER BY
- (
+/*
  -- 26. Listar alunos ordenados por nome crescente.
-	#SELECT * FROM Aluno ORDER BY nome ASC;
+	SELECT * FROM Aluno ORDER BY nome ASC;
  -- 27. Listar disciplinas por carga horária decrescente.
-	#SELECT * FROM Disciplina ORDER BY cargaHoraria DESC;
+	SELECT * FROM Disciplina ORDER BY cargaHoraria DESC;
  -- 28. Listar participações por frequência crescente.
-	#SELECT * FROM Participa ORDER BY frequencia ASC;
+	SELECT * FROM Participa ORDER BY frequencia ASC;
  -- 29. Listar alunos por nota decrescente.
-	#SELECT * FROM Participa ORDER BY nota DESC;
+	SELECT * FROM Participa ORDER BY nota DESC;
  -- 30. Listar cursos ordenados por área alfabeticamente.
-	#SELECT * FROM Curso ORDER BY area ASC;
- )
+	SELECT * FROM Curso ORDER BY area ASC;
+*/
  -- FILTRAGEM COM DISTINCT
- (
+/*
  -- 31. Listar todas as áreas de cursos sem repetição.
-	#SELECT DISTINCT area FROM Curso;
+	SELECT DISTINCT area FROM Curso;
  -- 32. Listar todos os nomes de alunos distintos.
-	#SELECT DISTINCT nome FROM Aluno;
+	SELECT DISTINCT nome FROM Aluno;
  -- 33. Listar todas as disciplinas distintas.
-	#SELECT DISTINCT nome FROM Disciplina;
+	SELECT DISTINCT nome FROM Disciplina;
  -- 34. Listar todas as notas distintas na tabela Participa.
-	#SELECT DISTINCT nota FROM Participa;
+	SELECT DISTINCT nota FROM Participa;
  -- 35. Listar todos os códigos de curso distintos que possuem disciplinas.
-	#SELECT DISTINCT idCurso FROM Disciplina;
- )
+	SELECT DISTINCT idCurso FROM Disciplina;
+*/
  -- FILTRAGEM COM UNION / UNION ALL
  (
  -- 36. Listar nomes de alunos e disciplinas sem repetição.
@@ -212,13 +212,40 @@ INSERT INTO Participa (idDisciplina,idAluno,nota,frequencia) VALUES
  */
  -- 40. Listar alunos e professores (assumindo tabela Professor).
  )
-
+ -- ===== ATIVIDADES =====
  -- SELECT A PARTIR DE OUTRO SELECT
-
-
-
-
-
-
-
+/*
+ -- 1. Selecionar nomes de alunos que possuem nota maior que 75.
+	SELECT nome FROM Aluno WHERE idAluno IN (SELECT idAluno FROM Participa WHERE nota > 75);
+ -- 2. Selecionar nomes de disciplinas que têm carga horária menor que a média das disciplinas.
+	SELECT nome FROM Disciplina WHERE cargaHoraria < (SELECT AVG(cargaHoraria) FROM Disciplina);
+ -- 3. Selecionar nomes de alunos que possuem frequência menor que a média de frequência da tabela Participa.
+	SELECT nome FROM Aluno WHERE idAluno IN (
+		SELECT idAluno FROM Participa WHERE frequencia < (SELECT AVG(frequencia) FROM Participa));
+ -- 4. Selecionar cursos que possuem menos disciplinas que a média de disciplinas por curso.
+	SELECT nome FROM Disciplina WHERE idCurso IN
+		(SELECT idCurso FROM Disciplina GROUP BY idCurso HAVING COUNT(idCurso) < 
+			(SELECT AVG(qtd) FROM (	SELECT COUNT(idCurso) AS qtd FROM Disciplina GROUP BY idCurso) AS t));
+ -- 5. Selecionar idAluno dos alunos que obtiveram a maior nota em alguma disciplina.
+	SELECT nome FROM Aluno WHERE idAluno IN (SELECT idAluno FROM Participa WHERE nota = (SELECT MAX(nota) FROM Participa));
+*/
+ -- SELECT A PARTIR DE NATURAL JOIN
+/*
+ -- 1. Listar nome do aluno e nota usando NATURAL JOIN.
+	SELECT Aluno.nome, Participa.nota FROM Aluno NATURAL JOIN Participa;
+ -- 2. Listar nome do aluno e frequência usando NATURAL JOIN.
+	SELECT Aluno.nome, Participa.frequencia FROM Aluno NATURAL JOIN Participa;
+ -- 3. Selecionar codDisciplina e nota usando NATURAL JOIN.
+	SELECT Disciplina.nome, Disciplina.idDisciplina, Participa.nota FROM Disciplina NATURAL JOIN Participa;
+ -- 4. Listar todos os dados de Aluno e Participa usando NATURAL JOIN.
+	SELECT * FROM Aluno NATURAL JOIN Participa;
+ -- 5. Selecionar nomes dos alunos com nota maior que 80 usando NATURAL JOIN.
+	SELECT nome, nota FROM Aluno NATURAL JOIN Participa WHERE nota > 80;
+*/
+ -- SELECT A PARTIR DE INNER JOIN
+ -- 1. Listar nome do aluno e nota usando INNER JOIN.
+ -- 2. Listar nome do aluno e frequência usando INNER JOIN.
+ -- 3. Selecionar nome do aluno, nome da disciplina e nota usando INNER JOIN com Disciplina.
+ -- 4. Listar todos os alunos e notas onde a nota seja maior que 75 usando INNER JOIN.
+ -- 5. Selecionar idAluno, nome e frequência usando INNER JOIN, ordenando por frequência decrescente.
 
