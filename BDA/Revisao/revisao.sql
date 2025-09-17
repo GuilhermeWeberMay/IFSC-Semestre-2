@@ -267,10 +267,17 @@ INSERT INTO Participa (idDisciplina,idAluno,nota,frequencia) VALUES
  	SELECT Aluno.nome, Participa.nota FROM Aluno INNER JOIN Participa
 		ON Aluno.idAluno = Participa.idAluno WHERE Participa.nota > 80;
  -- 2. Listar nome do aluno e disciplina apenas dos alunos que participam de disciplinas do curso 1.
+	SELECT Aluno.nome, Disciplina.nome FROM Aluno INNER JOIN Participa
+		ON Aluno.idAluno = Participa.idAluno INNER JOIN Disciplina
+        ON Disciplina.idDisciplina = Participa.idDisciplina WHERE Disciplina.idDisciplina = '1';
  -- 3. Selecionar nome e frequência dos alunos cuja frequência esteja em (85, 90, 95).
+	SELECT Aluno.nome, Participa.frequencia FROM Aluno INNER JOIN Participa
+		ON Aluno.idAluno = Participa.idAluno WHERE Participa.frequencia IN (85,90,95);
  -- 4. Listar nome do aluno e nota, ordenados pela nota decrescente.
- -- 5. Selecionar nome do curso e quantidade de disciplinas, apenas dos cursos que têmmais de 2 disciplinas.
-
+	SELECT Aluno.nome, Participa.nota FROM Aluno INNER JOIN Participa
+		ON Aluno.idAluno = Participa.idAluno ORDER BY Participa.nota DESC;
+ -- 5. Selecionar nome do curso e quantidade de disciplinas, apenas dos cursos que têm mais de 2 disciplinas.
+	SELECT Curso.nome
  
  
  
