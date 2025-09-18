@@ -81,7 +81,7 @@
   $precoPesquisado = $matrizMedicamento[$codigoPesquisado][1]; // Aqui eu pego o preço do medicamento pesquisado - pego o valor direto na matriz
   echo"<p> O código pesquisado foi $codigoPesquisado o nome do medicamento deste código é $nomePesquisado, vendido por R$$precoPesquisado</p>";
  }else{
-  echo"<p> O código pesquisado não está no estoque da farmacia, favor pesquisar um código válido </p>";
+  echo"<p> O código pesquisado $codigoPesquisado, não está no estoque da farmacia, favor pesquisar um código válido </p>";
  }
 
  // e) Ordenar os dados de todos os medicamentos por meio do nome do medicamento, em ordem alfabética crescente, e exibir estes dados no formato tabular 
