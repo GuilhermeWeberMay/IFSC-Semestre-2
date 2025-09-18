@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title> Matrizes PHP </title>
+</head>
+<body>
+ <h1> Matrizes em PHP - ListaL3 - Exerc7 </h1>
+ <form action="Exerc7.php" method="post">
+  <fieldset>
+   <legend> Cadastro de medicamentos - Farmacias GWM </legend>
+
+   <label for="codigo"> Código: </label>
+   <input type="text" name="codigo" id="codigo" autofocus required><br>
+
+   <label for="nome"> Nome: </label>
+   <input type="text" name="nome" id="nome" required><br>
+
+   <label for="preco"> Preço de venda: </label>
+   <input type="number" name="preco" id="preco" min="0.01" step="0.01" required><br>
+
+  </fieldset>
+
+  <fieldset>
+   <legend> Pesquisa de produto - Farmacias GWM</legend>
+
+   <label for="codigo-pesquisado"> Código: </label>
+   <input type="text" name="codigo-pesquisado" id="codigo-pesquisado" required>
+
+  </fieldset>
+
+  <button> Realizar procedimentos </button>
+
+ </form>
+</body>
+</html>
