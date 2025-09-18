@@ -20,12 +20,22 @@
   echo"<p> $variavel1 </p>";
  }
 
- $codigo = $_POST['codigo'];
- $nome   = $_POST['nome'];
- $preco  = $_POST['preco'];
+ $codigo1 = $_POST['codigo1'];
+ $codigo2 = $_POST['codigo2'];
+ $codigo3 = $_POST['codigo3'];
+
+ $nome1   = $_POST['nome1'];
+ $nome2   = $_POST['nome2'];
+ $nome3   = $_POST['nome3'];
+
+ $preco1  = $_POST['preco1'];
+ $preco2  = $_POST['preco2'];
+ $preco3  = $_POST['preco3'];
 
  // a)Armazene estes dados em uma estrutura matricial. Use o código do medicamento como índice associativo;
- $matrizMedicamento = [$codigo => array($nome, $preco)];
+ $matrizMedicamento = [$codigo1 => array($nome1, $preco1),
+                       $codigo2 => array($nome2, $preco2),
+                       $codigo3 => array($nome3, $preco3)];
 
  // b) Mostre os dados de todos os medicamentos cadastrados na matriz no formato tabular;
  echo"<table>
@@ -82,7 +92,7 @@
  }
 
  //Agora vamos organizar o vetor
- arsort($vetorAuxNome);
+ asort($vetorAuxNome);
  
  // Agora vamos apresentar esse vetor na forma tabular
   echo"<table>
