@@ -31,7 +31,7 @@
  
  $matriculaPesquisada = $_POST['matricula-pesquisada'];
 
- // Como estamos pesquisando pela matrícula do aluno, e a matrícula é índice associativo da matriz, não há necessidade de criarmos um veotr auxiliar. Neste caso, usamos uma função pronta de PHP qur pesquisa pelo índice da matriz
+ // Como estamos pesquisando pela matrícula do aluno, e a matrícula é índice associativo da matriz, não há necessidade de criarmos um vetor auxiliar. Neste caso, usamos uma função pronta de PHP qur pesquisa pelo índice da matriz
  $encontrou = array_key_exists($matriculaPesquisada, $matrizAlunos);
 
  if($encontrou){
