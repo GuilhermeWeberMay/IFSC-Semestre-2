@@ -7,9 +7,7 @@
   <link rel="stylesheet" href="Exerc7.css">
 </head>
 <body>
- <h1> Matrizes em PHP - ListaL3 - Exerc7 </h1>
- <h2> Resposta Servidor </h2>
-
+ <h1> PAC MAN - RESPOSTA SERVIDOR </h1>
  <?php
 
  function saidaVetor($vetor){
@@ -39,6 +37,7 @@
                        $codigo3 => array($nome3, $preco3)];
 
  // b) Mostre os dados de todos os medicamentos cadastrados na matriz no formato tabular;
+ echo"<p> <span>Remédios cadastrados</span> </p>";
  echo"<table>
        <tr>
         <td> Código </td>
@@ -66,7 +65,7 @@
  $nomeMenorPreco = $matrizMedicamento[$indiceMenorPreco][0];
 
  // Apresentação completa do medicamento com o menor valor
- echo"O código do medicamento com o menor valor é $indiceMenorPreco nome dele é $nomeMenorPreco ele é vendido pelo valor de R$$valorMenorPreco";
+ echo"<p>O código do medicamento com o <span>MENOR VALOR</span> é $indiceMenorPreco nome dele é $nomeMenorPreco ele é vendido pelo valor de R$$valorMenorPreco</p>";
  
  // d) Receba, do formulário acima, devidamente modificado, o código de um medicamento qualquer. O script em PHP deverá pesquisar este código na matriz e mostrar todas as informações do respectivo medicamento. Se o mesmo não for encontrado, mostrar uma mensagem apropriada;
 
@@ -80,9 +79,9 @@
  if ($encontrou){
   $nomePesquisado = $matrizMedicamento[$codigoPesquisado][0]; // Aqui eu pego o nome do medicamento pesquisado - pego o valor direto na matriz
   $precoPesquisado = $matrizMedicamento[$codigoPesquisado][1]; // Aqui eu pego o preço do medicamento pesquisado - pego o valor direto na matriz
-  echo"<p> O código pesquisado foi $codigoPesquisado o nome do medicamento deste código é $nomePesquisado, vendido por R$$precoPesquisado</p>";
+  echo"<p> O código <span>pesquisado</span> foi $codigoPesquisado o nome do medicamento deste código é $nomePesquisado, vendido por R$$precoPesquisado</p>";
  }else{
-  echo"<p> O código pesquisado $codigoPesquisado, não está no estoque da farmacia, favor pesquisar um código válido </p>";
+  echo"<p> O código pesquisado <span class=erro>$codigoPesquisado</span>, <span class=erro> NÃO </span> está no estoque da farmacia, favor pesquisar um código válido </p>";
  }
 
  // e) Ordenar os dados de todos os medicamentos por meio do nome do medicamento, em ordem alfabética crescente, e exibir estes dados no formato tabular 
@@ -96,6 +95,7 @@
  asort($vetorAuxNome);
  
  // Agora vamos apresentar esse vetor na forma tabular
+ echo"<p> <span>Remédios organizados por ordem crescente</span> </p>";
   echo"<table>
        <tr>
         <td> Código </td>
@@ -111,11 +111,6 @@
        <tr>";
  }
  echo"</table>";
-
-
-
-
-
  ?>
 </body>
 </html>

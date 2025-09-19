@@ -7,12 +7,118 @@ body{
 }
 fieldset.borda{
  border: 5px double rgb(33, 33, 222);
+ padding: 1%;
+ width: 60%;
+ margin: auto;
+ border-radius: 20px;
 }
 fieldset.interna{
  border: 5px dotted rgb(222, 161, 133);
+ padding: 5px;
+ margin: 2% auto;
 }
 
 div{
  margin: auto;
  text-align: center;
+}
+
+legend.primeira{
+ color: rgb(0, 255, 0)
+}
+legend.segunda{
+ color: rgb(253, 0, 0);
+}
+legend.terceira{
+ color: rgb(2, 247, 242);
+}
+legend.quarta{
+ color: rgb(255, 184, 255);
+}
+
+h1{
+ text-align: center;
+ color: rgb(255, 242, 0);
+ background-color: #ff8c00ef;
+ margin-bottom: 0px;
+ margin-top: 0px;
+ padding: 1%;
+ border-radius: 20PX;
+ width: 60%;
+ margin: auto;
+ border: 5px solid rgb(210, 0, 0);
+ text-shadow: 5px 5px black;
+}
+
+input{
+ background-color: black;
+ border: 5px double rgb(33, 33, 222);
+ padding: 3px;
+ margin: 1% auto;
+ border-radius: 20px;
+ text-align: center;
+ color: white;
+ font-family: "Press Start 2P";
+ font-size: 18px;
+}
+
+button{
+ display: block;
+ margin: 1% auto;
+ width: 10%;
+ background-color: black;
+ color: rgb(255, 255, 0);
+ font-family: "Press Start 2P";
+ font-size: 30px;
+ border: none;
+ transition: transform 0.2s ease;
+}
+
+button:hover{
+ transform: translateX(10px);
+ text-decoration: underline;
+}
+
+h2{
+ text-align: center;
+ color: rgb(255, 255, 0);
+ background-color: #ffa500;
+ margin-top: 0px;
+ padding: 5px;
+}
+/*----------------------------------------PHP------------------------------------*/
+
+table{
+ width: 70%;
+ border: 1px double rgb(33, 33, 222);
+ margin: 30px auto;
+ /* O primeiro valor são as distâncias de cima e baixo (top e botton) e o segundo valor são as distâncias da esquerda e direita (left e right)*/
+ background-color: rgb(33, 33, 222);
+}
+
+th{/* Cabeçalho da tabela - TABLE HEADER */
+ background-color: black;
+ color: rgb(33, 33, 222);
+ padding: 1%;
+ margin: 30px auto;
+}
+
+td{/* Linhas da tabela - TABLE DATA */
+ text-align: center;
+ background-color: black;
+ padding: 2%;
+ margin: 30px auto;
+}
+p{
+ border: 5px dotted rgb(222, 161, 133);
+ width: 67%;
+ text-align: center;
+ margin: 2% auto;
+ padding: 1%;
+}
+span{
+ color: rgb(2, 247, 242);
+}
+span.erro{
+ color: red;
 }
