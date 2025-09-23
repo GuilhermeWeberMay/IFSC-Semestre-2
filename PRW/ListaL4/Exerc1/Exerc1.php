@@ -41,7 +41,7 @@
   if(strlen($subNome) == 0){
    exit("<p> Nome de aluno inválido, aplicação encerrada! </p>");
   }
-
+  
  }
 
  function calcularMedia ($subNota1, $subNota2){
