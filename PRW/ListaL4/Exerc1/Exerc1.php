@@ -57,9 +57,11 @@
    echo"<p> Aluno REPROVADO! Com média <span> $subMedia </span> </p>";
   }
  }
+ //========================================================================================
 
  // Como estamos misturando formulário com processamento em PHP em um único arquivo, devemos fazer o PHP testar se o botão submit foi pressionado
  if(isset($_POST["enviar"])){
+  
   $nome = $_POST['nome'];
   $nota1 = $_POST['nota1'];
   $nota2 = $_POST['nota2'];
