@@ -8,3 +8,168 @@ button{
  background-color: black;
  padding: 10px;
 }
+/* ===== Estilo geral da página ===== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e6f0ff;
+    color: #003366;
+    margin: 0;
+    padding: 20px;
+}
+
+/* ===== Moldura geral dos blocos ===== */
+form, fieldset, div {
+    border: 1px solid #99b3ff;
+    border-radius: 10px;
+    background-color: #f7faff;
+    box-shadow: 0 0 10px rgba(0, 51, 102, 0.1);
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+/* ===== Títulos ===== */
+legend, h2, h3 {
+    color: #0047b3;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-bottom: 2px solid #99b3ff;
+    padding-bottom: 5px;
+}
+
+/* ===== Campos de entrada ===== */
+input[type="text"],
+input[type="number"],
+select {
+    width: 250px;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #99b3ff;
+    border-radius: 6px;
+    background-color: #ffffff;
+    transition: 0.3s;
+}
+
+/* ===== Efeito ao focar nos campos ===== */
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: #0047b3;
+    box-shadow: 0 0 6px rgba(0, 71, 179, 0.4);
+    outline: none;
+}
+
+/* ===== Labels ===== */
+label {
+    font-weight: 600;
+    color: #00264d;
+    display: inline-block;
+    width: 80px;
+}
+
+/* ===== Estilo para tabelas ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 71, 179, 0.15);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Cabeçalho da tabela */
+table thead {
+    background-color: #0047b3;
+    color: #ffffff;
+    text-align: left;
+}
+
+/* Células e bordas */
+table th, table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #99b3ff;
+}
+
+/* Linhas alternadas */
+table tr:nth-child(even) {
+    background-color: #f0f6ff;
+}
+
+/* Efeito hover */
+table tr:hover {
+    background-color: #dce9ff;
+    transition: 0.3s;
+}
+
+/* Alinhamento centralizado opcional */
+table td.center {
+    text-align: center;
+}
+
+/* ===== Estilo para parágrafos ===== */
+p {
+    font-size: 1rem;
+    color: #00264d;
+    background-color: #f0f6ff;
+    border-left: 4px solid #0047b3;
+    padding: 10px 15px;
+    margin: 15px 0;
+    border-radius: 6px;
+    line-height: 1.6;
+    box-shadow: 0 1px 4px rgba(0, 71, 179, 0.1);
+    text-align: center;
+}
+
+/* Parágrafo com destaque opcional */
+p.destaque {
+    background-color: #dce9ff;
+    border-left: 4px solid #003399;
+    font-weight: 600;
+}
+/* ===== Estilo para títulos principais ===== */
+h1 {
+    color: #003399;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: linear-gradient(to right, #cce0ff, #e6f0ff);
+    border-bottom: 3px solid #0047b3;
+    padding: 15px 0;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0, 71, 179, 0.1);
+}
+
+/* Efeito opcional ao passar o mouse */
+h1:hover {
+    color: #001f4d;
+    text-shadow: 0 0 8px rgba(0, 71, 179, 0.3);
+    transition: 0.3s;
+}
+
+/* ===== Estilo para caption das tabelas ===== */
+caption {
+    caption-side: top;
+    color: #003399;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    background: linear-gradient(to right, #cce0ff, #e6f0ff);
+    border-bottom: 3px solid #0047b3;
+    padding: 12px 0;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 2px 8px rgba(0, 71, 179, 0.1);
+    margin-bottom: 10px;
+}
+
+/* Efeito hover opcional (como no h1) */
+caption:hover {
+    color: #001f4d;
+    text-shadow: 0 0 8px rgba(0, 71, 179, 0.3);
+    transition: 0.3s;
+}

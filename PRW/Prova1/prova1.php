@@ -7,9 +7,10 @@
  <link rel="stylesheet" href="prova1.css">
 </head>
 <body>
+
+<h1> Prova 1</h1>
  <form action="prova1.php" method="post">
   <fieldset>
-   <fieldset>
     <legend> CTDS - PRW1 - Carro 1 </legend>
 
     <label for="codigo1" class="alinha"> Código: </label>
@@ -51,7 +52,6 @@
 
     </fieldset>
     <button name="enviar" > Cadastrar dados do carro </button>
-  </fieldset>
  </form>
 
  <?php
