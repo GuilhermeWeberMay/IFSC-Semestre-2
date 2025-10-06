@@ -1,0 +1,10 @@
+button{
+ display: block;
+ margin: 30px auto;
+ font-weight: bold;
+ font-style: italic;
+ color: gold;
+ border: 3px solid gold;
+ background-color: black;
+ padding: 10px;
+}
