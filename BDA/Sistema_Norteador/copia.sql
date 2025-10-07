@@ -203,10 +203,12 @@ VALUES
 ('2025-07-16',200,200.00,20.00,'BVC2N77',10,10,10);
 
 -- INICIO - Multiplos JOIN's
+-- 1
 SELECT F.idFuncionario, f.nome, f.cpf, os.idOS, os.data, os.totalPontos, os.valor, os.valorDesconto, os.placa, car.modelo, car.ano, car.cor, car.marca
 FROM Funcionario f
 INNER JOIN OrdemServico os ON f.idFuncionario = os.idFuncionario INNER JOIN Carros car ON car.placa = os.placa;
 
+-- 2
 SELECT 'PF' AS tipo, c.idCliente, c.nome, pf.cpf AS documento
 FROM pessoaFisica pf
 JOIN Clientes c ON pf.idCliente = c.idCliente
@@ -216,6 +218,7 @@ FROM pessoaJuridica pj
 JOIN Clientes c ON pj.idCliente = c.idCliente
 ORDER BY idCliente;
 
+-- 3
 SELECT 
     f.idFuncionario, f.nome AS nomeFuncionario, f.cpf AS cpfFuncionario,
     c.idCliente, c.nome AS nomeCliente, c.email AS emailCliente,
@@ -225,11 +228,95 @@ INNER JOIN Funcionario f ON os.idFuncionario = f.idFuncionario
 INNER JOIN Clientes c ON os.idCliente = c.idCliente;
 -- FIM - Multiplos JOIN's
 
+-- 4
 SELECT *
 FROM Carros
 INNER JOIN Clientes ON Carros.idCliente = Clientes.idCliente;
 
+-- 5
+SELECT 
+    c.idCliente, c.nome AS nomeCliente, c.email,
+    pf.cpf,
+    car.placa, car.modelo, car.ano, car.cor, car.marca
+FROM Carros car
+INNER JOIN Clientes c ON car.idCliente = c.idCliente
+INNER JOIN pessoaFisica pf ON c.idCliente = pf.idCliente
+ORDER BY c.idCliente;
 
+-- 6
+SELECT 
+    c.idCliente, c.nome AS nomeCliente, c.email,
+    pj.cnpj,
+    car.placa, car.modelo, car.ano, car.cor, car.marca
+FROM Carros car
+INNER JOIN Clientes c ON car.idCliente = c.idCliente
+INNER JOIN pessoaJuridica pj ON c.idCliente = pj.idCliente
+ORDER BY c.idCliente;
+
+-- 7
+ SELECT os.idOS,os.data,os.totalPontos,os.valor,os.placa, fun.idFuncionario, fun.nome, fun.cpf
+ from OrdemServico os natural join Funcionario fun;
+
+-- 8
+ SELECT os.idOS,os.data,os.totalPontos,os.valor,os.placa, ser.*
+ from OrdemServico os natural join Servicos ser;
+ 
+-- 9
+ SELECT os.idOS,os.data,os.totalPontos,os.valor,os.placa, c.nome as nomeCliente
+ from OrdemServico os natural join Clientes c;
+ 
+-- 10
+SELECT *
+FROM Carros
+INNER JOIN Clientes ON Carros.idCliente = Clientes.idCliente
+where Carros.ano > 2020;
+
+-- 11
+SELECT 
+    c.nome, c.pontoCliente, car.modelo, car.marca
+FROM Clientes c
+INNER JOIN Carros car ON c.idCliente = car.idCliente
+WHERE c.pontoCliente > 1000;
+
+-- 12
+SELECT 
+    s.descricao, COUNT(os.idOS) AS qtdServicosExecutados
+FROM Servicos s
+LEFT JOIN OrdemServico os ON s.idServico = os.idServico
+GROUP BY s.descricao;
+
+-- 13
+SELECT 
+    c.cidade, COUNT(car.placa) AS qtdCarros
+FROM Clientes c
+INNER JOIN Carros car ON c.idCliente = car.idCliente
+GROUP BY c.cidade
+ORDER BY qtdCarros DESC;
+
+-- 14
+SELECT 
+    f.nome, COUNT(os.idOS) AS totalOrdens
+FROM Funcionario f
+INNER JOIN OrdemServico os ON f.idFuncionario = os.idFuncionario
+GROUP BY f.nome
+ORDER BY totalOrdens DESC;
+	
+-- 15
+SELECT 
+    car.modelo, car.marca, s.descricao, s.valor
+FROM OrdemServico os
+INNER JOIN Carros car ON os.placa = car.placa
+INNER JOIN Servicos s ON os.idServico = s.idServico
+WHERE s.valor > 100;
+
+-- 5) Criar pelo menos uma view que resuma informações do sistema
+create view informaCliente as
+	select data,totalPontos,valor,valorDesconto
+    from OrdemServico
+    where idCliente = '2';
+select * from informaCliente;
+
+-- 6) Criar pelo menos uma procedure que execute uma operação relevante (ex.: inserir um pedido)
  DELIMITER //
 CREATE PROCEDURE mostraTabelas()
 BEGIN
@@ -242,5 +329,4 @@ BEGIN
     SELECT * FROM OrdemServico;
 END //
 DELIMITER ;
-
 -- call mostraTabelas();
