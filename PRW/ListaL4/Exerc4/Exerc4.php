@@ -42,7 +42,7 @@
  }
  //=======================================================================
  function calcularFinalCompra ($fValorCompra, $fValorDesconto){
-  return $valorFinal = $fValorCompra - $fValorDesconto;
+  return $fValorCompra - $fValorDesconto;
  }
  //=======================================================================
  function mostrarResultados($fValorCompra, $fPercentComissao, $fValorComissao, $fValorDesconto, $fValorFinalCompra){
