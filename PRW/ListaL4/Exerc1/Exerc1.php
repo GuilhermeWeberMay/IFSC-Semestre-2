@@ -43,13 +43,13 @@
   }
   
  }
-
+ //========================================================================================
  function calcularMedia ($subNota1, $subNota2){
   $subMedia = ($subNota1 + $subNota2) / 2;
   $subMediaFormatada = number_format($subMedia, 1, ",", ".");
   return $subMediaFormatada;
  }
-
+ //========================================================================================
  function situacaoAluno ($subMedia){
   if ($subMedia >= 6){
    echo"<p> Aluno APROVADO! Com média <span> $subMedia </span> </p>";
