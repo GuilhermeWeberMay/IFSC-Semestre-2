@@ -32,8 +32,9 @@
  function saida ($variavel1){
   echo"<p>$variavel1</p>";
  }
- // Smepre usado nos INPUT'S com tipo TEXT ou similares
+ // Sempre usado nos INPUT'S com tipo TEXT ou similares
  function testarNome($subNome){
+
   // Vamos retirar espaços em branco adicionados na caixa nome do formulário
   $subNome = trim($subNome); // Retira os espaços em branco 
 
