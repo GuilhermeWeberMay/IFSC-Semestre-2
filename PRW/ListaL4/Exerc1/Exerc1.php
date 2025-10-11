@@ -28,7 +28,7 @@
 
  <?php
  
- // Vamos definir, nesse local do arquivo, devemos fazer o PHP testar se o botão submit foi precissionado
+ 
  function saida ($variavel1){
   echo"<p>$variavel1</p>";
  }
@@ -58,7 +58,7 @@
   }
  }
  //========================================================================================
-
+ // Vamos definir, nesse local do arquivo, devemos fazer o PHP testar se o botão submit foi precissionado
  // Como estamos misturando formulário com processamento em PHP em um único arquivo, devemos fazer o PHP testar se o botão submit foi pressionado
  if(isset($_POST["enviar"])){
   
