@@ -1,0 +1,111 @@
+/* ===== Estilo geral da página ===== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fff5f5; /* fundo suave vermelho-claro */
+    color: #660000; /* texto vermelho escuro */
+    margin: 0;
+    padding: 40px;
+}
+
+/* ===== Título principal ===== */
+h1 {
+    text-align: center;
+    color: #b30000;
+    margin-bottom: 25px;
+    font-size: 28px;
+}
+
+/* ===== Formulário principal ===== */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffe6e6;
+    border: 2px solid #b30000;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 0 10px rgba(179, 0, 0, 0.3);
+}
+
+/* ===== Fieldset e legenda ===== */
+fieldset {
+    border: none;
+    padding: 0;
+}
+
+legend {
+    font-weight: bold;
+    color: #800000;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* ===== Layout dos campos ===== */
+label {
+    font-weight: 500;
+    margin-right: 8px;
+}
+
+input[type="number"] {
+    width: 120px;
+    padding: 6px;
+    border: 1px solid #cc0000;
+    border-radius: 6px;
+    background-color: #fffafa;
+    margin-right: 10px;
+}
+
+/* ===== Checkbox ===== */
+input[type="checkbox"] {
+    accent-color: #b30000;
+    margin-top: 15px;
+}
+
+/* ===== Botão ===== */
+button, input[type="submit"] {
+    margin-top: 18px;
+    padding: 10px 16px;
+    background-color: #b30000;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #990000;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 600px) {
+    form {
+        padding: 15px;
+    }
+
+    input[type="number"] {
+        width: 100%;
+        margin-top: 8px;
+    }
+
+    label {
+        display: block;
+        margin-top: 10px;
+    }
+}
+span{
+ font-weight: bold;
+ color: orangered;
+}
+p{
+ text-align: center;
+ margin: auto;
+ margin-top: 3%;
+}
+
+
+button{
+ display: block;
+ margin: auto;
+ margin-top: 4%;
+}
