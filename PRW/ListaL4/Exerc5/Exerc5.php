@@ -27,7 +27,6 @@
   // Como estamos usando funções que estão em um arquivo externo, precisamos informar ao php o nome e o caminho do arquivo com o comando apropriado
   require "calculaMedia.inc.php";
   require "validaSituacao.inc.php";
-  require
 
   $nota1 = $_POST['nota1'];
   $nota2 = $_POST['nota2'];
