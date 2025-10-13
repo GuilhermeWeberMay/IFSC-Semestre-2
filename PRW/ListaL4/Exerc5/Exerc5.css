@@ -1,0 +1,94 @@
+/* Fundo geral */
+body {
+ font-family: Arial, Helvetica, sans-serif;
+ background-color: #e7edf3;
+ /* azul jeans claro */
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+ margin: 0;
+}
+
+/* Formulário */
+form {
+ background-color: #ffffff;
+ border: 2px solid #4a6fa5;
+ /* azul jeans médio */
+ border-radius: 10px;
+ padding: 25px 35px;
+ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+ width: 300px;
+ text-align: left;
+}
+
+/* Título */
+h2 {
+ text-align: center;
+ color: #2f4a6d;
+ /* azul jeans escuro */
+ margin-bottom: 20px;
+}
+
+/* Rótulos */
+label {
+ display: block;
+ margin-top: 10px;
+ color: #2f4a6d;
+ font-weight: bold;
+}
+
+/* Campos de entrada */
+input[type="number"] {
+ width: 100%;
+ padding: 8px;
+ margin-top: 5px;
+ border: 1px solid #b0c4de;
+ border-radius: 5px;
+ background-color: #f7f9fb;
+ box-sizing: border-box;
+}
+
+/* Foco no input */
+input[type="number"]:focus {
+ outline: none;
+ border-color: #4a6fa5;
+ box-shadow: 0 0 5px #4a6fa5;
+}
+
+/* Botão */
+button {
+ margin-top: 15px;
+ width: 100%;
+ padding: 10px;
+ background-color: #4a6fa5;
+ /* azul jeans */
+ color: #fff;
+ border: none;
+ border-radius: 6px;
+ font-size: 15px;
+ cursor: pointer;
+ font-weight: bold;
+ transition: background-color 0.3s ease;
+}
+
+button:hover {
+ background-color: #385780;
+ /* tom mais escuro no hover */
+}
+
+/* Resultado da média */
+.resultado {
+ margin-top: 20px;
+ text-align: center;
+ background-color: #f1f5fa;
+ border: 1px solid #b0c4de;
+ border-radius: 6px;
+ padding: 10px;
+ width: 300px;
+ color: #2f4a6d;
+ font-weight: bold;
+ font-size: 16px;
+ box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
