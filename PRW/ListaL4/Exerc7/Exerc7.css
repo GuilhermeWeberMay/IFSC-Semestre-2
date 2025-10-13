@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e8f5e9; /* verde bem claro */
+    color: #1b5e20; /* verde escuro */
+    margin: 20px;
+}
+
+h1 {
+    color: #2e7d32;
+}
+
+form {
+    background-color: #c8e6c9; /* verde suave */
+    border: 2px solid #81c784;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+}
+
+label {
+    display: inline-block;
+    margin-right: 10px;
+    color: #1b5e20;
+}
+
+input[type="text"] {
+    padding: 5px;
+    border: 1px solid #4caf50;
+    border-radius: 4px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.radio-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 7px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #388e3c;
+}
