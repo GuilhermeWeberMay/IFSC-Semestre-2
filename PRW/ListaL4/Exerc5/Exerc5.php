@@ -12,7 +12,7 @@
  <h1> Funções de usuário em PHP - Exercício 5 </h1>
 
  <form action="Exerc5.php" method="post">
-  
+
   <label for="nota1">Nota 1:</label>
   <input type="number" id="nota1" name="nota1" step="0.1" required min="0" max="10"> <br>
 
@@ -24,7 +24,7 @@
  <?php
 
  if (isset($_POST['calcular'])) {
-
+  // Como estamos usando funções que estão em um arquivo externo, precisamos informar ao php o nome e o caminho do arquivo com o comando apropriado
   include "calculaMedia.inc.php";
   include "validaSituacao.inc.php";
 
