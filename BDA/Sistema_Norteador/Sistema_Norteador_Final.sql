@@ -132,7 +132,17 @@ VALUES
 ('Pedro Nunes','61992341111',NULL,'pedro.nunes@email.com','1989-04-19',790,'Rua Brasília','58','Brasília','DF','70040900'),
 ('Luana Costa','85991234567',NULL,'luana.costa@email.com','1995-07-01',880,'Av. Beira Mar','200','Fortaleza','CE','60165121'),
 ('Marcos Rocha','41999887766',NULL,'marcos.rocha@email.com','1987-10-12',1020,'Rua XV de Novembro','33','Curitiba','PR','80020000'),
-('Fernanda Alves','61999988877',NULL,'fernanda.alves@email.com','1992-01-23',670,'Av. Central','250','Goiânia','GO','74000010');
+('Fernanda Alves','61999988877',NULL,'fernanda.alves@email.com','1992-01-23',670,'Av. Central','250','Goiânia','GO','74000010'),
+('Carla Nunes','1992-07-18','12398745600','carla.nunes@email.com','11991112233',NULL,'Rua das Rosas','250','São Paulo','SP','01234000'), -- 11
+('Diego Ferreira','1986-03-29','65412398700','diego.ferreira@email.com','21998887766',NULL,'Av. Atlântica','820','Rio de Janeiro','RJ','22021001'), -- 12
+('Gabriela Santos','1998-09-05','78965412300','gabriela.santos@email.com','62997778899',NULL,'Rua das Flores','44','Goiânia','GO','74015010'), -- 13
+('Felipe Rocha','1991-01-27','95175345600','felipe.rocha@email.com','48996543210',NULL,'Rua das Palmeiras','300','Florianópolis','SC','88034000'), -- 14
+('Beatriz Lima','1995-11-14','35715948600','beatriz.lima@email.com','81991234598',NULL,'Av. Recife','1200','Recife','PE','50030000'), -- 15
+('Anderson Costa','1984-06-20','25896314700','anderson.costa@email.com','31995556677',NULL,'Rua Central','178','Belo Horizonte','MG','30120000'), -- 16
+('Renata Farias','1990-08-01','14725836900','renata.farias@email.com','71992223344',NULL,'Av. Sete de Setembro','45','Salvador','BA','40020000'), -- 17
+('Vitor Barros','1988-05-19','95148635700','vitor.barros@email.com','62991117755',NULL,'Rua Goiás','800','Goiânia','GO','74020020'), -- 18
+('Sabrina Oliveira','1997-12-22','78912345600','sabrina.oliveira@email.com','51991112233',NULL,'Av. Farrapos','505','Porto Alegre','RS','90220000'), -- 19
+('Henrique Teixeira','1993-09-09','95115975300','henrique.teixeira@email.com','11995554433',NULL,'Rua da Consolação','1500','São Paulo','SP','01302000'); -- 20
 
 INSERT INTO Carros (placa, modelo, ano, cor, marca, idCliente)
 VALUES
@@ -179,7 +189,13 @@ VALUES
 ('45987321000108',3),
 ('78654123000160',5),
 ('99887766000110',7),
-('33445577000122',9);
+('33445577000122',9),
+('21547896000133',11),
+('87451230000109',13),
+('65239874000157',15),
+('90785612000142',17),
+('43126789000181',19);
+
 
 INSERT INTO pessoaFisica (cpf, idCliente)
 VALUES
@@ -187,7 +203,12 @@ VALUES
 ('98765432111',4),
 ('45678912385',6),
 ('78912345622',8),
-('74185296377',10);
+('74185296377',10),
+('65412398700',12),
+('95175345600',14),
+('25896314700',16),
+('95148635700',18),
+('95115975300',20);
 
 INSERT INTO OrdemServico (data,totalPontos,valor,valorDesconto,placa,idFuncionario,idServico, idCliente)
 VALUES
@@ -329,4 +350,4 @@ BEGIN
     SELECT * FROM OrdemServico;
 END //
 DELIMITER ;
--- call mostraTabelas();
+ call mostraTabelas();
