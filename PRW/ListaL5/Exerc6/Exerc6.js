@@ -74,7 +74,20 @@
 
    const msgVendaTotal = "<p> O faturamento com a venda de todos os produtos da matriz é igual a "+ soma + "</p>";
 
-   objDiv.innerHTML = cabecalhoTabela + corpoTabela + msgVendaTotal;
+   // Achar o menor valor 
+   let menorPreco = matrizProdutos[produto1][1];
+   let nomeMenorPreco;
+   for(produto in matrizProdutos){
+    if(matrizProdutos[produto1][1] < menorPreco){
+      menorPreco = matrizProdutos[produto1][1];
+      nomeMenorPreco = produto;
+    }
+   }
+   let msgMenorPreco = "<p> O produto com o menor preço é: "+ nomeMenorPreco +"</p>";
+
+
+   // Apresentação dos resultados
+   objDiv.innerHTML = cabecalhoTabela + corpoTabela + msgVendaTotal + msgMenorPreco;
 
  }
  let objButao = document.getElementById("butao");
