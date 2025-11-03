@@ -52,13 +52,30 @@
   for(produto in matrizProdutos){
    estoque = matrizProdutos[produto][0];
    preco = matrizProdutos[produto][1];
-   alert(preco);
    corpoTabela = corpoTabela +"<tr> <td> " + produto + " </td> <td> " + estoque + " </td> <td> " + preco + " </td> </tr> ";
   }
 
    corpoTabela += "</table>";
 
-   objDiv.innerHTML = cabecalhoTabela + corpoTabela;
+   
+
+   // Para calcular o valor total da venda de todos os produtos, vamos percorrer a matriz e multiplicar o preço de cada produto pela quantidade em estoque
+
+   let soma = 0;
+
+   for(produto in matrizProdutos){
+    estoque = matrizProdutos[produto][0];
+    preco = matrizProdutos[produto][1];
+    soma += estoque * preco;
+   }
+   soma = soma.toLocaleString("pt-BR", {style: "currency", currency: "BRL", 
+    minimumFractionDigits: 2, maximumFractionDigits: 2
+   });
+
+   const msgVendaTotal = "<p> O faturamento com a venda de todos os produtos da matriz é igual a "+ soma + "</p>";
+
+   objDiv.innerHTML = cabecalhoTabela + corpoTabela + msgVendaTotal;
+
  }
  let objButao = document.getElementById("butao");
  objButao.addEventListener("click", criarMatriz);
