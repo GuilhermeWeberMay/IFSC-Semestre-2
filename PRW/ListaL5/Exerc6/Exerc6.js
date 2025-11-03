@@ -35,11 +35,11 @@
   // Finalmente, criamos a estrutura da matriz
   let matrizProdutos = [];
 
-  matrizProdutos[produto1] = [vetorProduto1];
-  matrizProdutos[produto2] = [vetorProduto2]; 
-  matrizProdutos[produto3] = [vetorProduto3]; 
+  matrizProdutos[produto1] = vetorProduto1;
+  matrizProdutos[produto2] = vetorProduto2; 
+  matrizProdutos[produto3] = vetorProduto3;
   
-  console.log(matrizProdutos);
+  //console.log(matrizProdutos);
 
   // Criar o cabeçalho da tabela HTML
   let cabecalhoTabela = "<table> <caption> Relação de produtos cadastrados na matriz </caption> <tr> <th> Produto </th> <th> Estoque </th> <th> Preço </th> </tr>";
@@ -47,10 +47,13 @@
   let corpoTabela = "";
   let produto, estoque, preco;
 
+  console.log(matrizProdutos);
+
   for(produto in matrizProdutos){
    estoque = matrizProdutos[produto][0];
    preco = matrizProdutos[produto][1];
-   corpoTabela = corpoTabela +"<tr> <td> " + produto + " </td> <td> " + estoque + " </td> <td> " + preco + " </td> </tr> "
+   alert(preco);
+   corpoTabela = corpoTabela +"<tr> <td> " + produto + " </td> <td> " + estoque + " </td> <td> " + preco + " </td> </tr> ";
   }
 
    corpoTabela += "</table>";
