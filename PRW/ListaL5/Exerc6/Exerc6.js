@@ -54,13 +54,9 @@
    preco = matrizProdutos[produto][1];
    corpoTabela = corpoTabela +"<tr> <td> " + produto + " </td> <td> " + estoque + " </td> <td> " + preco + " </td> </tr> ";
   }
-
    corpoTabela += "</table>";
 
-   
-
    // Para calcular o valor total da venda de todos os produtos, vamos percorrer a matriz e multiplicar o preço de cada produto pela quantidade em estoque
-
    let soma = 0;
 
    for(produto in matrizProdutos){
@@ -74,16 +70,22 @@
 
    const msgVendaTotal = "<p> O faturamento com a venda de todos os produtos da matriz é igual a "+ soma + "</p>";
 
-   // Achar o menor valor 
-   let menorPreco = matrizProdutos[produto1][1];
-   let nomeMenorPreco;
+   // Descobrir os dados do produto mais barato guardado na matriz. Vamos supor que o primeiro produto já é o mais barato e vamos colocar seu preço na varaiável de controle
+   let menorPreco = matrizProdutos[produto][1];
+   let nomeMenorPreco, estoqueMenorPreco;
    for(produto in matrizProdutos){
-    if(matrizProdutos[produto1][1] < menorPreco){
-      menorPreco = matrizProdutos[produto1][1];
+    if(matrizProdutos[produto][1] < menorPreco){
+      menorPreco = matrizProdutos[produto][1];
+      estoqueMenorPreco = matrizProdutos[produto][0];
       nomeMenorPreco = produto;
     }
    }
-   let msgMenorPreco = "<p> O produto com o menor preço é: "+ nomeMenorPreco +"</p>";
+
+   menorPreco = menorPreco.toLocaleString("pt-BR", {style: "currency", currency: "BRL", 
+    minimumFractionDigits: 2, maximumFractionDigits: 2
+   });
+
+   let msgMenorPreco = "<p> O produto com o menor preço é: "+ nomeMenorPreco +" com o valor de: "+menorPreco+" e estoque de "+ estoqueMenorPreco +"</p>";
 
 
    // Apresentação dos resultados
