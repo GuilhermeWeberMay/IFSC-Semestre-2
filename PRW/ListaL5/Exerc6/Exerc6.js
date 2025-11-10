@@ -74,7 +74,7 @@
    let menorPreco = matrizProdutos[produto][1];
    let nomeMenorPreco, estoqueMenorPreco;
    for(produto in matrizProdutos){
-    if(matrizProdutos[produto][1] < menorPreco){
+    if(matrizProdutos[produto][1] <= menorPreco){
       menorPreco = matrizProdutos[produto][1];
       estoqueMenorPreco = matrizProdutos[produto][0];
       nomeMenorPreco = produto;
