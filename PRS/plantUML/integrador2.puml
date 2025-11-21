@@ -1,0 +1,138 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+
+abstract class "Usuario" as Usuario {
+  # email: String
+  # telefone: String
+}
+
+class Jogador {
+  - id: String
+  - nomeUsuario: String
+  - nome: String
+  - sobrenome: String
+  - cpf: String
+  - cidade: String
+  - estado: String
+  - bairro: String
+  + agendarReserva(): void
+  + cancelarReserva(): void
+}
+
+class Funcionario {
+  - id: int
+  - nome: String
+  - sobrenome: String
+  - cpf: String
+}
+
+class Proprietario {
+  - cnpj: String
+  - nome: String
+}
+
+class Notificacao {
+  - destinatario: Usuario
+  - mensagem: String
+  - tipo: String
+  - dataEnvio: DateTime
+  + enviar(): void
+}
+
+class Reserva {
+  - id: int
+  - data: DateTime
+  - inicio: Time
+  - fim: Time
+  - valorTotal: float
+  + calcularValorTotal(duracao: int, precos: Quadra): float
+}
+
+class Pagamento {
+  - valor: Double
+  - metodo: String
+  - dataPagamento: DateTime
+}
+
+class Quadra {
+  - id: int
+  - nome: String
+  - tipoEsporte: String
+  - qtdJogadores: byte
+  - horariosOcupados: List<?>
+  - preco: float
+  - comprimento: float
+  - largura: float
+  - fotos: List<String>
+}
+
+class Local {
+  - rua: String
+  - bairro: String
+  - estado: String
+  - numero: String
+  - cidade: String
+  - cep: String
+}
+
+class "Relatório" as Relatorio {
+  - tipo: String
+  - periodo: DateRange
+  - dados: Map
+  + gerar(): void
+  + exportarPDF(): void
+  + exportarExcel(): void
+}
+
+enum ESituacao {
+  PENDENTE
+  CANCELADA
+  APROVADA
+  FINALIZADA
+}
+
+enum EStatus {
+  PAGO
+  PENDENTE
+  CANCELADO
+}
+
+enum EForma {
+  DEBITO
+  CREDITO
+  PIX
+}
+
+enum EEstado {
+  DISPONIVEL
+  INDISPONIVEL
+}
+
+'Associacoes
+
+' Hereditariedade
+Usuario <|--left-- Jogador
+Usuario <|--right-- Proprietario
+Usuario <|-up- Funcionario
+
+' Classe Associativa
+Reserva "1" -down- "0..*" Jogador : notifica >
+(Jogador, Reserva) . Notificacao
+
+'Reserva 
+Reserva -left-> ESituacao
+Reserva "1" -up- "1" Pagamento
+Pagamento -up-> EForma
+Pagamento -left-> EStatus
+Reserva --> Funcionario
+
+'Quadra
+Quadra "1" ---left--- "1" Reserva
+Quadra "1..*" --- "1" Proprietario
+Quadra <-right- EEstado
+Quadra <-up- Local
+
+' Relatorio
+Proprietario .right.> Relatorio
