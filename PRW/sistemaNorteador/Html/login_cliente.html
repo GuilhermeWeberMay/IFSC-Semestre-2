@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="UTF-8">
+ <title> Sistema Norteador - protótipo de aplicação web para lavação de automóveis </title>
+ <link rel="stylesheet" href="formataLavacao.css">
+</head>
+<body>
+ <div class="conteiner"> 
+  <header>
+   <h1> Desenvolvimento Web - CTDS - Sistema Norteador </h1>
+  </header>
+   <nav>
+    <div class="menu">
+     <ul>
+
+      <li> 
+      <a href="home.html"> Pagina Inicial - Home </a>
+      </li>
+      
+      <li> 
+      <a href="cadastro_cliente.html"> Cadastro Cliente </a>
+      </li>
+
+      <li> 
+      <a href="cadastro_veiculo.html"> Cadastro Veículo  </a>
+      </li>
+
+      <li> 
+      <a href="login_administrador.html"> Login do Administrador </a>
+      </li>
+
+     </ul>
+    
+   </nav>
+  <main>
+   <form action="login_cliente.php" method="post">
+    <fieldset>
+     <legend> Clientes - Login </legend>
+     <div class="alinha">
+      <label for="login"> Login: </label>
+      <input type="text" id="login" name="login" autofocus placeholder="Seu login aqui" required>
+     </div>
+
+     <div class="alinha">
+      <label for="senha"> Senha: </label>
+      <input type="password" id="senha" name="senha" placeholder="Sua senha aqui" required>
+     </div>
+
+     <button> Fazer login </button>
+    </fieldset>
+   </form>
+  </main>
+
+   <footer>
+    <div class="rodape">
+    <p> Sitema feito por Guilherme Weber May no Curso Técnico de Desenvolvimento de Sistemas do Instituto Federal de Santa Catarina - IFSC Campûs Florianópolis - Centro <br>
+    Copyright &copy;2025 - todos os direitos reservados. Proibida a reprodução parcial ou total do conteúdo presente nesta aplicação. <br>
+    Entre em contato conosco: <br>
+    <a href="contato.html" target="_blank"> Contato </a> 
+    </p>
+   </div>
+   </footer>
+  </div>
+</body>
+</html>
