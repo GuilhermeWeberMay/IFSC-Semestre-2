@@ -1,0 +1,142 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+skinparam nodesep 65
+skinparam ranksep 50
+
+
+abstract class "Usuario" as Usuario {
+  - email: String
+  - telefone: String
+}
+
+class Jogador {
+  - id: String
+  - nomeUsuario: String
+  - nome: String
+  - sobrenome: String
+  - cpf: String
+  + agendarReserva(): void
+  + cancelarReserva(): void
+}
+
+class Funcionario {
+  - id: int
+  - nome: String
+  - sobrenome: String
+  - cpf: String
+}
+
+class Proprietario {
+  - cnpj: String
+  - nome: String
+}
+
+class Notificacao {
+  - destinatario: Usuario
+  - mensagem: String
+  - tipo: String
+  - dataEnvio: DateTime
+  + enviar(): void
+}
+
+class Reserva {
+  - id: int
+  - data: DateTime
+  - inicio: Time
+  - fim: Time
+  - valorTotal: float
+  + calcularValorTotal(duracao: int, precos: Quadra): float
+}
+
+class Pagamento {
+  - valor: Double
+  - metodo: String
+  - dataPagamento: DateTime
+}
+
+class Quadra {
+  - id: int
+  - nome: String
+  - tipoEsporte: String
+  - qtdJogadores: byte
+  - horariosOcupados: List<?>
+  - preco: float
+  - comprimento: float
+  - largura: float
+  - fotos: List<String>
+  - rua: String
+  - numero: int
+  - cep: int
+}
+
+class Local {
+  - bairro: String
+  - estado: String
+  - cidade: String
+}
+
+class "Relatório" as Relatorio {
+  - tipo: String
+  - periodo: DateRange
+  - dados: Map
+  + gerar(): void
+  + exportarPDF(): void
+  + exportarExcel(): void
+}
+
+enum ESituacao {
+  PENDENTE
+  CANCELADA
+  APROVADA
+  FINALIZADA
+}
+
+enum EStatus {
+  PAGO
+  PENDENTE
+  CANCELADO
+}
+
+enum EForma {
+  DEBITO
+  CREDITO
+  PIX
+}
+
+enum EEstado {
+  DISPONIVEL
+  INDISPONIVEL
+}
+
+' --- Relacionamentos ---
+
+Usuario <|-down- Jogador
+Usuario <|-left- Funcionario
+Usuario <|--right-- Proprietario
+Reserva -up-> Funcionario
+
+'Classe associativa
+Jogador "1" -- "0..*" Reserva : notifica >
+(Jogador, Reserva) . Notificacao
+Reserva "1" -right- "0..*" Quadra 
+Proprietario "1" -- "1..*" Quadra : gerencia
+Reserva "1" -- "1" Pagamento
+Jogador -right-> Local
+Proprietario -left-> Local
+
+Reserva --left--> ESituacao
+Pagamento -left-> EStatus
+Pagamento -right-> EForma
+Quadra --> EEstado
+
+Quadra <..right.. Relatorio
+
+note bottom of Pagamento
+    Forma de Pagamento não será implementada em PI
+end note
+
+@enduml
