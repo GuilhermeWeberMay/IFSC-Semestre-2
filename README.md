@@ -30,3 +30,4 @@ Aqui compartilho exercícios, trabalhos e aplicações que refletem os conhecime
 - DAMINELLI, Herval. [Lista de exercícios]. Material didático da disciplina Programação Web I. Instituto Federal de Santa Catarina (IFSC), 2025.
 - PISCHING, Marcos Andre. [Lista de exercícios]. Material didático da disciplina Programação Orientada a Objetos I. Instituto Federal de Santa Catarina (IFSC), 2025.
 - MELLO, Emerson Ribeiro de. [Lista de exercícios]. Material didático da disciplina Banco de Dados II. Instituto Federal de Santa Catarina (IFSC), 2025.
+- BUENO, Lucas. [Lista de exercicíos]. Material didático da disciplina Projeto de Sistemas. Instituto Federal de Santa Catarina (IFSC), 2025.
