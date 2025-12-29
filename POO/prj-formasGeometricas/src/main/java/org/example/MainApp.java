@@ -1,7 +1,7 @@
 package org.example;
 public class MainApp {
     public static void main(String[] args) {
-        // Instanciação do Objeto Circulo
+        // Instanciação do Objeto Circulo e referenciamento do Objeto Circulo a palavra circulo
         Circulo circulo = new Circulo(5);
         // Instanciação do Objeto Triangulo
         Triangulo triangulo = new Triangulo(3,4);
